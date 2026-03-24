@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!-- Built on Frappe. https://frappeframework.com/ -->
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="frappe">
+
+	
+		<meta name="title" content="404"><meta name="language" content="en"><meta property="og:type"  content="article"><meta property="og:title"  content="404"><meta name="twitter:title" content="404"><meta name="twitter:card" content="summary">
+	
+
+	<title>Not Found</title>
+
+	
+	<link
+		rel="shortcut icon"
+		href="/files/ERPNext - Blue Background-64.png"
+		type="image/x-icon"
+	>
+	<script type="text/javascript">
+    function getCookie() {
+        return Object.fromEntries(document.cookie.split('; ').map((part) => part.split('=')).map((d) => [d[0], decodeURIComponent(d[1])]));
+    }
+
+    function setCookie(cname, cvalue, exdays, domain) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + d.toUTCString();
+        if (domain) {
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;" + "domain=" + domain + ";";
+        } else {
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/;";
+        }
+    }
+
+    let old_cookie = getCookie();
+
+    // Remove all cookies that are not mentioned in Cookie Policy
+    for (let key in old_cookie) {
+        if (!["sid", "io", "user_id", "user_image", "system_user", "full_name"].includes(key)) {
+            setCookie(key, old_cookie[key], -1);
+            setCookie(key, old_cookie[key], -1, document.domain);
+            setCookie(key, old_cookie[key], -1, "." + document.domain);
+            setCookie(key, old_cookie[key], -1, "analytics.frappe.io");
+        }
+    }
+</script>
+
+
+
+<!-- Plausible -->
+<script defer data-api="https://frappecloud.com/api/event" data-domain="erpnext.com" src="https://frappecloud.com/js/script.js"></script>
+<link type="text/css" rel="stylesheet" href="/files/website_theme/frappe_theme_aa0bb82b.css">
+<link type="text/css" rel="stylesheet" href="/assets/erpnext_com/css/custom.css">
+		
+	
+		
+
+	<script>
+		window.frappe = {};
+		window._version_number = "1755868516.3359823";
+		frappe.ready_events = [];
+		frappe.ready = function(fn) {
+			frappe.ready_events.push(fn);
+		}
+		window.dev_server = 0;
+		window.socketio_port = 9000;
+		window.show_language_picker = false;
+	</script>
+</head>
+<body frappe-session-status="logged-out" data-path="404" class="">
+
+		
+
+
+
+
+
+
+
+
+<div id="page-404" data-path="None">
+	
+<div class="page-content-wrapper">
+	<!-- breadcrumbs -->
+	<div class="page-breadcrumbs">
+		
+			
+		
+	</div>
+
+	
+	<main class="container">
+		<div class="page-header-wrapper">
+			<div class="page-header">
+				
+			</div>
+
+			
+		</div>
+
+		<div class="page_content">
+<style>
+	body {
+		background-color: var(--subtle-accent);
+		font-size: var(--text-base);
+	}
+</style>
+
+<script>
+	window.is_404 = true;
+</script>
+
+<div class="error-page">
+	<div>
+		<h4>
+			Page not found
+		</h4>
+		<div class="details">
+			<a href='/' class="text-muted">Back to Home</a>
+		</div>
+	</div>
+</div>
+
+</div>
+
+		<div class="page-footer"></div>
+	</main>
+	
+</div>
+
+</div>
+
+
+<div id="all-symbols" style="display:none"></div><script type="text/javascript">fetch(`/assets/frappe/icons/timeless/icons.svg?v=${window._version_number}`, {credentials: "same-origin"}).then((r) => r.text()).then((svg) => {let c = document.getElementById("all-symbols"); c.insertAdjacentHTML("beforeend", svg);});</script><script type="text/javascript">fetch(`/assets/frappe/icons/espresso/icons.svg?v=${window._version_number}`, {credentials: "same-origin"}).then((r) => r.text()).then((svg) => {let c = document.getElementById("all-symbols"); c.insertAdjacentHTML("beforeend", svg);});</script>
+	<!-- js should be loaded in body! -->
+	<script>
+		frappe.boot = {
+ "apps_data": {
+  "apps": [],
+  "default_path": "",
+  "is_desk_apps": 1
+ },
+ "assets_json": {
+  "billing.bundle.js": "/assets/frappe/dist/js/billing.bundle.TQHLK7UT.js",
+  "bootstrap-4-web.bundle.js": "/assets/frappe/dist/js/bootstrap-4-web.bundle.FOZOVELL.js",
+  "build_events.bundle.js": "/assets/frappe/dist/js/build_events.bundle.BCX32TWL.js",
+  "calendar.bundle.js": "/assets/frappe/dist/js/calendar.bundle.4A4YITIU.js",
+  "controls.bundle.js": "/assets/frappe/dist/js/controls.bundle.GKAKPL57.js",
+  "data_import_tools.bundle.js": "/assets/frappe/dist/js/data_import_tools.bundle.44FYB4HH.js",
+  "desk.bundle.css": "/assets/frappe/dist/css/desk.bundle.2RLTDSL2.css",
+  "desk.bundle.js": "/assets/frappe/dist/js/desk.bundle.OCTMOSR6.js",
+  "dialog.bundle.js": "/assets/frappe/dist/js/dialog.bundle.VJFWB3L6.js",
+  "email.bundle.css": "/assets/frappe/dist/css/email.bundle.TL25OPIF.css",
+  "file_uploader.bundle.js": "/assets/frappe/dist/js/file_uploader.bundle.76SZJFKH.js",
+  "form.bundle.js": "/assets/frappe/dist/js/form.bundle.RTF2PIZS.js",
+  "form_builder.bundle.js": "/assets/frappe/dist/js/form_builder.bundle.NRPX4YQU.js",
+  "frappe-web.bundle.js": "/assets/frappe/dist/js/frappe-web.bundle.6QN3IIHY.js",
+  "kanban_board.bundle.js": "/assets/frappe/dist/js/kanban_board.bundle.F6FPXXED.js",
+  "libs.bundle.js": "/assets/frappe/dist/js/libs.bundle.TIV7ZGVY.js",
+  "list.bundle.js": "/assets/frappe/dist/js/list.bundle.Y5BCPIAZ.js",
+  "login.bundle.css": "/assets/frappe/dist/css/login.bundle.Y3B7MQOV.css",
+  "logtypes.bundle.js": "/assets/frappe/dist/js/logtypes.bundle.5KO3ZOOI.js",
+  "onboarding_tours.bundle.js": "/assets/frappe/dist/js/onboarding_tours.bundle.RAUR6X4Z.js",
+  "photoswipe.bundle.js": "/assets/frappe/dist/js/photoswipe.bundle.YSXZQA64.js",
+  "print.bundle.css": "/assets/frappe/dist/css/print.bundle.DKHFNGRZ.css",
+  "print_format.bundle.css": "/assets/frappe/dist/css/print_format.bundle.PK73ERI4.css",
+  "print_format_builder.bundle.js": "/assets/frappe/dist/js/print_format_builder.bundle.VQYWNAGA.js",
+  "report.bundle.css": "/assets/frappe/dist/css/report.bundle.QZVCYEQ7.css",
+  "report.bundle.js": "/assets/frappe/dist/js/report.bundle.H644GQOY.js",
+  "rtl_desk.bundle.css": "/assets/frappe/dist/css-rtl/desk.bundle.TNH6DCGK.css",
+  "rtl_email.bundle.css": "/assets/frappe/dist/css-rtl/email.bundle.M64552G6.css",
+  "rtl_login.bundle.css": "/assets/frappe/dist/css-rtl/login.bundle.TSUHVVGH.css",
+  "rtl_print.bundle.css": "/assets/frappe/dist/css-rtl/print.bundle.YM5DZSKD.css",
+  "rtl_print_format.bundle.css": "/assets/frappe/dist/css-rtl/print_format.bundle.4AXYJCR3.css",
+  "rtl_report.bundle.css": "/assets/frappe/dist/css-rtl/report.bundle.WKTS4PFZ.css",
+  "rtl_web_form.bundle.css": "/assets/frappe/dist/css-rtl/web_form.bundle.IVAVYIF5.css",
+  "rtl_website.bundle.css": "/assets/frappe/dist/css-rtl/website.bundle.RWHT6U76.css",
+  "sentry.bundle.js": "/assets/frappe/dist/js/sentry.bundle.AX44GVWW.js",
+  "telemetry.bundle.js": "/assets/frappe/dist/js/telemetry.bundle.LKEZCADB.js",
+  "upgrade.bundle.js": "/assets/central/dist/js/upgrade.bundle.2KJAXMIQ.js",
+  "video_player.bundle.js": "/assets/frappe/dist/js/video_player.bundle.DUYYLSFO.js",
+  "web_form.bundle.css": "/assets/frappe/dist/css/web_form.bundle.QYULQ5M5.css",
+  "web_form.bundle.js": "/assets/frappe/dist/js/web_form.bundle.DUQ4MKTS.js",
+  "website.bundle.css": "/assets/frappe/dist/css/website.bundle.EUK4YBME.css",
+  "workflow_builder.bundle.js": "/assets/frappe/dist/js/workflow_builder.bundle.MPAFFZ3D.js"
+ },
+ "is_fc_site": 0,
+ "lang": "en",
+ "sitename": "central.frappe.cloud",
+ "sysdefaults": {
+  "currency": null,
+  "date_format": "dd-mm-yyyy",
+  "first_day_of_the_week": "Sunday",
+  "float_precision": 3,
+  "number_format": "#,##,###.##",
+  "time_format": "HH:mm:ss"
+ },
+ "time_zone": {
+  "system": "Asia/Kolkata",
+  "user": "Asia/Kolkata"
+ }
+}
+		// for backward compatibility of some libs
+		frappe.sys_defaults = frappe.boot.sysdefaults;
+	</script>
+	<script type="text/javascript" src="/assets/frappe/dist/js/frappe-web.bundle.6QN3IIHY.js"></script>
+	
+	<script type="text/javascript" src="/website_script.js"></script>
+	<script type="text/javascript" src="/assets/frappe/dist/js/controls.bundle.GKAKPL57.js"></script>
+	<script type="text/javascript" src="/assets/central/dist/js/upgrade.bundle.2KJAXMIQ.js"></script>
+	<script type="text/javascript" src="/assets/erpnext_com/js/payment.js"></script>
+	<script type="text/javascript" src="/assets/erpnext_com/js/search_docs.js"></script>
+		
+	<script>frappe.csrf_token = "None";</script></body>
+</html>

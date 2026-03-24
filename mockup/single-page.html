@@ -1,0 +1,2568 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERPNext Gebruikersgroep Nederland — De Nederlandstalige bron voor ERPNext</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+/* === ERPNext Nederland — Mockup Stylesheet === */
+html { scroll-behavior: smooth; }
+
+:root {
+  --primary: #0f766e;
+  --primary-light: #14b8a6;
+  --primary-dark: #134e4a;
+  --accent: #0284c7;
+  --accent-light: #38bdf8;
+  --bg: #ffffff;
+  --bg-light: #f8fafb;
+  --bg-dark: #f1f5f9;
+  --text: #1e293b;
+  --text-light: #475569;
+  --text-muted: #94a3b8;
+  --border: #e2e8f0;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.07), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --max-width: 1200px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--primary); text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: var(--primary-light); text-decoration: none; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 32px; }
+
+/* === HEADER / NAV === */
+header {
+  background: var(--bg);
+  color: var(--text);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.92);
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.logo {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: -0.02em;
+}
+.logo:hover { text-decoration: none; color: var(--text); }
+.logo .logo-icon {
+  width: 36px; height: 36px;
+  background: var(--primary);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 13px;
+  color: #fff;
+  letter-spacing: 0;
+}
+nav { display: flex; gap: 2px; }
+nav a {
+  color: var(--text-light);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+nav a:hover, nav a.active {
+  color: var(--primary);
+  background: rgba(15, 118, 110, 0.06);
+  text-decoration: none;
+}
+.nav-toggle { display: none; background: none; border: none; color: var(--text); font-size: 24px; cursor: pointer; padding: 8px; border-radius: 8px; }
+.nav-toggle:hover { background: var(--bg-light); }
+
+/* === HERO === */
+.hero {
+  background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 96px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.hero h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.hero p { font-size: 19px; opacity: 0.88; max-width: 620px; margin: 0 auto 36px; line-height: 1.7; }
+.hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 28px;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: -0.01em;
+}
+.btn-primary {
+  background: #fff;
+  color: var(--primary-dark);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.btn-primary:hover {
+  background: #f0fdfa;
+  color: var(--primary-dark);
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+}
+.btn-outline:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.btn-sm { padding: 9px 20px; font-size: 14px; }
+
+/* === SECTIONS === */
+section { padding: 80px 0; }
+section.alt { background: var(--bg-light); }
+section h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+section .section-lead {
+  font-size: 17px;
+  color: var(--text-light);
+  margin-bottom: 48px;
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+/* === SECTION DIVIDER === */
+.section-divider {
+  padding-top: 100px;
+  border-top: 1px solid var(--border);
+  margin-top: 20px;
+}
+
+/* === GRID === */
+.grid { display: grid; gap: 20px; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* === CARDS === */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+.card h3 { font-size: 17px; font-weight: 650; margin-bottom: 8px; letter-spacing: -0.01em; color: var(--text); }
+.card p { color: var(--text-light); font-size: 14px; line-height: 1.65; }
+.card .card-icon {
+  width: 48px; height: 48px;
+  background: var(--bg-light);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+.card .card-meta { font-size: 12px; color: var(--text-muted); margin-top: 14px; display: flex; align-items: center; gap: 8px; }
+.card-link { display: block; color: inherit; }
+.card-link:hover { text-decoration: none; }
+
+/* === MODULE CARDS === */
+.module-card .card-icon {
+  background: var(--bg-light);
+  color: var(--text-light);
+  box-shadow: none;
+  border: 1px solid var(--border);
+}
+
+/* === STATS === */
+.stats { display: flex; justify-content: center; gap: 56px; padding: 48px 0; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-value {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.stat-label { font-size: 13px; color: var(--text-muted); margin-top: 8px; font-weight: 500; }
+
+/* === TABLE === */
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); }
+th {
+  background: var(--bg-light);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+tr:hover td { background: var(--bg-light); }
+
+/* === BADGES === */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.badge-primary { background: rgba(15, 118, 110, 0.08); color: var(--primary); }
+.badge-success { background: rgba(22, 163, 74, 0.08); color: var(--success); }
+.badge-warning { background: rgba(217, 119, 6, 0.08); color: var(--warning); }
+.badge-accent { background: rgba(2, 132, 199, 0.08); color: var(--accent); }
+
+/* === FORUM === */
+.forum-categories { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px; }
+.forum-cat {
+  display: flex; align-items: center; gap: 16px;
+  padding: 20px 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.forum-cat:hover { border-color: var(--primary-light); box-shadow: var(--shadow); transform: translateY(-1px); }
+.forum-cat-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: #fff; flex-shrink: 0;
+}
+.forum-cat-icon.blue { background: var(--primary); }
+.forum-cat-icon.green { background: var(--success); }
+.forum-cat-icon.orange { background: var(--warning); }
+.forum-cat-icon.purple { background: #7c3aed; }
+.forum-cat-icon.red { background: var(--danger); }
+.forum-cat-icon.gray { background: #64748b; }
+.forum-cat-icon.teal { background: var(--primary-light); }
+.forum-cat h4 { font-size: 15px; margin-bottom: 2px; font-weight: 600; }
+.forum-cat p { font-size: 13px; color: var(--text-muted); margin: 0; }
+.forum-cat .count { margin-left: auto; text-align: center; flex-shrink: 0; }
+.forum-cat .count-num { font-size: 18px; font-weight: 700; color: var(--primary); }
+.forum-cat .count-label { font-size: 11px; color: var(--text-muted); }
+
+.forum-post {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+.forum-post:last-child { border-bottom: none; }
+.forum-avatar {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 16px; flex-shrink: 0;
+}
+.forum-post-content { flex: 1; min-width: 0; }
+.forum-post-title { font-weight: 600; font-size: 15px; color: var(--text); display: block; transition: color 0.2s ease; }
+.forum-post-title:hover { color: var(--primary); }
+.forum-post-meta { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
+.forum-post-stats { display: flex; gap: 20px; flex-shrink: 0; text-align: center; }
+.forum-post-stat { font-size: 12px; color: var(--text-muted); }
+.forum-post-stat strong { display: block; font-size: 15px; color: var(--text); font-weight: 650; }
+.forum-solved { color: var(--success); font-weight: 600; }
+
+/* === SIDEBAR === */
+.page-with-sidebar { display: grid; grid-template-columns: 260px 1fr; gap: 40px; }
+.sidebar { position: sticky; top: 96px; align-self: start; }
+.sidebar-nav a {
+  display: block;
+  padding: 10px 16px;
+  color: var(--text-light);
+  font-size: 14px;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+.sidebar-nav a:hover, .sidebar-nav a.active {
+  background: rgba(15, 118, 110, 0.05);
+  color: var(--primary);
+  border-left-color: var(--primary);
+  text-decoration: none;
+}
+.sidebar-section { margin-bottom: 28px; }
+.sidebar-section h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  padding: 0 16px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* === PAGE CONTENT === */
+.page-header {
+  padding: 56px 0 36px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+.page-header h1 { font-size: 34px; font-weight: 700; letter-spacing: -0.025em; }
+.page-header p { font-size: 17px; color: var(--text-light); margin-top: 10px; line-height: 1.7; }
+.breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; font-weight: 500; }
+.breadcrumb a { color: var(--text-muted); transition: color 0.2s ease; }
+.breadcrumb a:hover { color: var(--primary); }
+
+.content h2 {
+  font-size: 22px;
+  margin: 48px 0 16px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  letter-spacing: -0.02em;
+}
+.content h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+.content h3 { font-size: 17px; margin: 28px 0 12px; font-weight: 650; }
+.content p { margin-bottom: 16px; }
+.content ul, .content ol { margin: 0 0 16px 24px; }
+.content li { margin-bottom: 6px; }
+.content code {
+  background: var(--bg-light);
+  padding: 3px 7px;
+  border-radius: 6px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+.content pre {
+  background: var(--bg-light);
+  padding: 20px;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  margin-bottom: 16px;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+/* === AGENDA === */
+.event {
+  display: flex; gap: 24px;
+  padding: 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  transition: all 0.25s ease;
+}
+.event:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+.event-date {
+  width: 76px; flex-shrink: 0;
+  text-align: center;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  border-radius: var(--radius);
+}
+.event-date .day { font-size: 30px; font-weight: 800; line-height: 1; }
+.event-date .month { font-size: 12px; text-transform: uppercase; margin-top: 4px; font-weight: 600; letter-spacing: 0.05em; }
+.event-content h3 { font-size: 18px; margin-bottom: 6px; font-weight: 650; }
+.event-content p { font-size: 14px; color: var(--text-light); margin-bottom: 10px; }
+.event-meta { display: flex; gap: 18px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
+
+/* === PARTNERS === */
+.partner {
+  padding: 32px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+  transition: all 0.25s ease;
+}
+.partner:hover { box-shadow: var(--shadow-lg); }
+.partner h3 { font-size: 20px; margin-bottom: 4px; font-weight: 650; }
+.partner .partner-type { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+.partner p { font-size: 14px; color: var(--text-light); }
+
+/* === FOOTER === */
+footer {
+  background: #0f172a;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 56px 0 28px;
+  margin-top: 0;
+}
+footer h4 { color: #fff; font-size: 14px; margin-bottom: 18px; font-weight: 600; letter-spacing: -0.01em; }
+footer a { color: rgba(255, 255, 255, 0.6); font-size: 14px; transition: color 0.2s ease; }
+footer a:hover { color: #fff; text-decoration: none; }
+footer ul { list-style: none; }
+footer li { margin-bottom: 10px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+.footer-bottom {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* === USP BAR === */
+.usp-bar {
+  background: var(--bg-light);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+.usp-bar .container { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; }
+.usp-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+.usp-icon { color: var(--primary); font-size: 16px; font-weight: 700; }
+
+/* === BLOG (from blog.html) === */
+.blog-card { display: flex; gap: 24px; padding: 24px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 16px; transition: all 0.25s ease; }
+.blog-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-1px); text-decoration: none; color: inherit; }
+.blog-thumb { width: 200px; height: 140px; flex-shrink: 0; background: var(--bg-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 40px; color: var(--text-muted); }
+.blog-content { flex: 1; }
+.blog-content h3 { font-size: 18px; margin-bottom: 6px; color: var(--text); }
+.blog-content p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+.blog-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; display: flex; gap: 16px; align-items: center; }
+
+/* === IMPLEMENTATIE (from implementatie.html) === */
+.step { display: flex; gap: 24px; margin-bottom: 32px; }
+.step-num {
+  width: 48px; height: 48px; flex-shrink: 0;
+  background: var(--primary); color: #fff;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 20px;
+}
+.step-content h3 { font-size: 18px; margin-bottom: 6px; }
+.step-content p { font-size: 14px; color: var(--text-light); }
+.step-content ul { font-size: 14px; color: var(--text-light); margin: 8px 0 0 20px; }
+.step-content li { margin-bottom: 4px; }
+.timeline { position: relative; padding-left: 24px; }
+.timeline::before {
+  content: ''; position: absolute; left: 23px; top: 48px; bottom: 48px;
+  width: 2px; background: var(--border);
+}
+.phase-card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 32px; margin-bottom: 24px;
+}
+.phase-card h3 { display: flex; align-items: center; gap: 12px; font-size: 18px; margin-bottom: 16px; }
+.phase-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--primary); color: #fff; font-weight: 700; font-size: 14px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .forum-categories { grid-template-columns: 1fr; }
+  .page-with-sidebar { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .hero h1 { font-size: 32px; }
+  .hero { padding: 64px 0; }
+  section { padding: 56px 0; }
+  .container { padding: 0 24px; }
+}
+@media (max-width: 600px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  nav { display: none; }
+  .nav-toggle { display: block; }
+  .hero { padding: 48px 0; }
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 16px; }
+  .stats { gap: 28px; }
+  .stat-value { font-size: 32px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+  header .container { height: 64px; }
+  section { padding: 48px 0; }
+  .container { padding: 0 20px; }
+  .card { padding: 22px; }
+  .event { flex-direction: column; gap: 16px; }
+  .event-date { width: auto; display: flex; gap: 8px; align-items: center; justify-content: flex-start; padding: 10px 16px; }
+  .event-date .day { font-size: 22px; }
+  .event-date .month { margin-top: 0; }
+  .forum-post-stats { display: none; }
+  .blog-card { flex-direction: column; }
+  .blog-thumb { width: 100%; height: 120px; }
+}
+  </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- HEADER -->
+<!-- ============================================================ -->
+<header>
+  <div class="container">
+    <a href="#home" class="logo">
+      <span class="logo-icon">NL</span>
+      ERPNext Gebruikersgroep Nederland
+    </a>
+    <button class="nav-toggle">&#9776;</button>
+    <nav>
+      <a href="#waarom">Waarom ERPNext</a>
+      <a href="#modules">Modules</a>
+      <a href="#nederland">Nederland</a>
+      <a href="#handleidingen">Handleidingen</a>
+      <a href="#forum">Forum</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#blog">Blog</a>
+      <a href="#implementatie">Implementatie</a>
+      <a href="#klanten">Klanten</a>
+      <a href="#partners">Partners</a>
+      <a href="#over-ons">Over ons</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- HOME (index.html) -->
+<!-- ============================================================ -->
+<div id="home">
+
+<!-- USP BAR -->
+<div class="usp-bar">
+  <div class="container">
+    <span class="usp-item"><span class="usp-icon">&#10003;</span> 100% Open Source</span>
+    <span class="usp-item"><span class="usp-icon">&#10003;</span> Volledig vrij te gebruiken</span>
+    <span class="usp-item"><span class="usp-icon">&#10003;</span> 14+ jaar ontwikkeling</span>
+    <span class="usp-item"><span class="usp-icon">&#10003;</span> 150+ landen</span>
+    <span class="usp-item"><span class="usp-icon">&#10003;</span> #1 Open Source ERP</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>ERPNext voor Nederlandse Bedrijven</h1>
+    <p>De Nederlandstalige bron voor het meest complete open-source ERP-systeem ter wereld. Handleidingen, handleidingen en een community speciaal voor Nederland.</p>
+    <div class="hero-buttons">
+      <a href="#handleidingen" class="btn btn-primary">Bekijk handleidingen</a>
+      <a href="#waarom" class="btn btn-outline">Waarom ERPNext?</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section>
+  <div class="container">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">20.000+</div>
+        <div class="stat-label">GitHub Stars</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">500+</div>
+        <div class="stat-label">Contributors</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">150+</div>
+        <div class="stat-label">Landen</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">14+</div>
+        <div class="stat-label">Jaar ontwikkeling</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">GNU</div>
+        <div class="stat-label">GPLv3 Licentie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES PREVIEW -->
+<section class="alt">
+  <div class="container">
+    <h2>Een compleet platform</h2>
+    <p class="section-lead">ERPNext dekt alle bedrijfsprocessen — van boekhouding tot webshop, volledig geintegreerd.</p>
+    <div class="grid grid-4">
+      <div class="card module-card">
+        <div class="card-icon">&#128200;</div>
+        <h3>Boekhouding</h3>
+        <p>Grootboek, facturen, BTW, bankreconciliatie, rapportages</p>
+      </div>
+      <div class="card module-card">
+        <div class="card-icon">&#128722;</div>
+        <h3>Inkoop</h3>
+        <p>Leveranciers, inkooporders, goederenontvangst</p>
+      </div>
+      <div class="card module-card">
+        <div class="card-icon">&#128176;</div>
+        <h3>Verkoop</h3>
+        <p>Offertes, verkooporders, facturatie, CRM</p>
+      </div>
+      <div class="card module-card">
+        <div class="card-icon">&#128230;</div>
+        <h3>Voorraad</h3>
+        <p>Magazijnen, serienummers, batchnummers, tracking</p>
+      </div>
+      <div class="card module-card">
+        <div class="card-icon">&#128101;</div>
+        <h3>HR</h3>
+        <p>Medewerkers, verlof, salarissen, onkostendeclaraties</p>
+      </div>
+      <div class="card module-card">
+        <div class="card-icon">&#128203;</div>
+        <h3>Projecten</h3>
+        <p>Taken, tijdregistratie, Gantt-diagrammen, budgetten</p>
+      </div>
+      <div class="card module-card">
+        <div class="card-icon">&#9881;</div>
+        <h3>Productie</h3>
+        <p>Stuklijsten, werkorders, planning, kwaliteit</p>
+      </div>
+      <div class="card module-card">
+        <div class="card-icon">&#127760;</div>
+        <h3>Website</h3>
+        <p>CMS, blog, webshop, klantportaal</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEDERLAND SPECIFIEK -->
+<section>
+  <div class="container">
+    <h2>Speciaal voor Nederland</h2>
+    <p class="section-lead">Handleidingen en handleidingen voor het inrichten van ERPNext volgens Nederlandse normen.</p>
+    <div class="grid grid-3">
+      <a href="#handleidingen" class="card card-link">
+        <h3>BTW-inrichting</h3>
+        <p>21%, 9%, 0%, verleggingsregeling, intracommunautair — alle Nederlandse BTW-regimes stap voor stap.</p>
+        <div class="card-meta"><span class="badge badge-primary">Handleiding</span> Gevorderd</div>
+      </a>
+      <a href="#handleidingen" class="card card-link">
+        <h3>SEPA-betalingen</h3>
+        <p>Payment Orders, SEPA XML-export, upload naar Rabobank, ABN AMRO of ING.</p>
+        <div class="card-meta"><span class="badge badge-primary">Handleiding</span> Gevorderd</div>
+      </a>
+      <a href="#handleidingen" class="card card-link">
+        <h3>Grootboekschema</h3>
+        <p>Nederlands grootboekschema opzetten met aandacht voor RGS-compatibiliteit.</p>
+        <div class="card-meta"><span class="badge badge-primary">Handleiding</span> Gevorderd</div>
+      </a>
+      <a href="#handleidingen" class="card card-link">
+        <h3>Bedrijfsinrichting</h3>
+        <p>KvK, BTW-nummer, bankrekeningen, betalingstermijnen — alles in een keer goed.</p>
+        <div class="card-meta"><span class="badge badge-primary">Handleiding</span> Beginner</div>
+      </a>
+      <a href="#handleidingen" class="card card-link">
+        <h3>Verkoopworkflow</h3>
+        <p>Van offerte tot factuur: Quotation, Sales Order, Project, Task, Delivery Note, Sales Invoice.</p>
+        <div class="card-meta"><span class="badge badge-primary">Handleiding</span> Beginner</div>
+      </a>
+      <a href="#handleidingen" class="card card-link">
+        <h3>Instance Inrichting</h3>
+        <p>Apps, workflows, users, rollen, templates, e-mail — het complete stappenplan.</p>
+        <div class="card-meta"><span class="badge badge-primary">Handleiding</span> Expert</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BRANCHES -->
+<section class="alt">
+  <div class="container">
+    <h2>Voor elke branche</h2>
+    <p class="section-lead">ERPNext past zich aan aan uw bedrijfsprocessen.</p>
+    <div class="grid grid-4">
+      <div class="card"><h3>Bouw &amp; Techniek</h3><p>Projecten, onderaanneming, BTW verlegd</p></div>
+      <div class="card"><h3>Handel &amp; Distributie</h3><p>Voorraad, meerdere magazijnen, webshop</p></div>
+      <div class="card"><h3>ICT &amp; Dienstverlening</h3><p>CRM, urenregistratie, abonnementen</p></div>
+      <div class="card"><h3>Productie</h3><p>Stuklijsten, werkorders, kwaliteit</p></div>
+      <div class="card"><h3>Detailhandel</h3><p>POS, voorraad, e-commerce</p></div>
+      <div class="card"><h3>Horeca</h3><p>Kassa, recepturen, personeel</p></div>
+      <div class="card"><h3>Non-profit</h3><p>Fondsen, donateurs, subsidies</p></div>
+      <div class="card"><h3>Agrarisch</h3><p>Percelen, oogst, traceerbaarheid</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORUM PREVIEW -->
+<section>
+  <div class="container">
+    <h2>Uit het forum</h2>
+    <p class="section-lead">De laatste vragen en discussies van de Nederlandse ERPNext-gemeenschap.</p>
+    <div class="forum-post">
+      <div class="forum-avatar">M</div>
+      <div class="forum-post-content">
+        <a href="#forum" class="forum-post-title">Hoe stel ik de BTW-verleggingsregeling in voor onderaannemers?</a>
+        <div class="forum-post-meta">Maarten &middot; Boekhouding &amp; Financieel &middot; 2 uur geleden</div>
+      </div>
+      <div class="forum-post-stats">
+        <div class="forum-post-stat"><strong>4</strong> reacties</div>
+        <div class="forum-post-stat"><strong>28</strong> views</div>
+      </div>
+    </div>
+    <div class="forum-post">
+      <div class="forum-avatar" style="background: #00a86b;">J</div>
+      <div class="forum-post-content">
+        <a href="#forum" class="forum-post-title">SEPA XML wordt geweigerd door ING — foutmelding op regel 3</a>
+        <div class="forum-post-meta">Jurgen &middot; Technisch &middot; 5 uur geleden</div>
+      </div>
+      <div class="forum-post-stats">
+        <div class="forum-post-stat"><strong>7</strong> reacties</div>
+        <div class="forum-post-stat"><strong>42</strong> views</div>
+      </div>
+    </div>
+    <div class="forum-post">
+      <div class="forum-avatar" style="background: #e8740c;">L</div>
+      <div class="forum-post-content">
+        <a href="#forum" class="forum-post-title">ERPNext als basis voor werkbonnen-app — ervaringen?</a>
+        <div class="forum-post-meta">Lisa &middot; Algemeen &middot; 1 dag geleden &middot; <span class="forum-solved">Opgelost</span></div>
+      </div>
+      <div class="forum-post-stats">
+        <div class="forum-post-stat"><strong>12</strong> reacties</div>
+        <div class="forum-post-stat"><strong>89</strong> views</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 24px;">
+      <a href="#forum" class="btn btn-primary btn-sm">Naar het forum</a>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA PREVIEW -->
+<section class="alt">
+  <div class="container">
+    <h2>Komende evenementen</h2>
+    <div class="event">
+      <div class="event-date">
+        <div class="day">18</div>
+        <div class="month">SEP</div>
+      </div>
+      <div class="event-content">
+        <h3>ERPNext Gebruikersdag Nederland 2026</h3>
+        <p>De eerste Nederlandse ERPNext Gebruikersdag! Presentaties, workshops en netwerken.</p>
+        <div class="event-meta">
+          <span>&#128205; Dordrecht</span>
+          <span>&#128337; 09:30 - 17:00</span>
+          <span><a href="#agenda">Meer informatie</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS PREVIEW -->
+<section>
+  <div class="container">
+    <h2>Partners</h2>
+    <p class="section-lead">Ondersteuning nodig bij implementatie? Onze partners staan klaar.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>OpenCompany246</h3>
+        <p style="color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 8px;">Hosting</p>
+        <p>Beheerde ERPNext-hosting op Europese servers. AVG-compliant.</p>
+      </div>
+      <div class="card">
+        <h3>PRILK</h3>
+        <p style="color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 8px;">Implementatie</p>
+        <p>ERPNext-implementaties voor het Nederlandse MKB. BTW, SEPA, boekhouding.</p>
+      </div>
+      <div class="card">
+        <h3>Impertio Studio</h3>
+        <p style="color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 8px;">Implementatie</p>
+        <p>Custom development, integraties en Frappe Framework-apps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="hero" style="padding: 48px 0;">
+  <div class="container">
+    <h2 style="font-size: 28px; color: #fff;">Klaar om te beginnen?</h2>
+    <p style="font-size: 16px;">Start met de handleidingen of stel een vraag op het forum.</p>
+    <div class="hero-buttons">
+      <a href="#handleidingen" class="btn btn-primary">Start met handleidingen</a>
+      <a href="#forum" class="btn btn-outline">Stel een vraag</a>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #home -->
+
+
+<!-- ============================================================ -->
+<!-- WAAROM ERPNEXT (waarom.html) -->
+<!-- ============================================================ -->
+<div id="waarom" class="section-divider">
+
+<section class="hero">
+  <div class="container">
+    <h1>Waarom ERPNext?</h1>
+    <p>Het meest complete open-source ERP-systeem ter wereld. Ontdek waarom duizenden organisaties wereldwijd kiezen voor ERPNext.</p>
+  </div>
+</section>
+
+<!-- USPs -->
+<section>
+  <div class="container">
+    <h2>#1 Open Source ERP ter wereld</h2>
+    <p class="section-lead">ERPNext wordt door AI-systemen, analisten en vergelijkingssites consequent aangewezen als het meest volledige open-source ERP-systeem. Niet zonder reden.</p>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="card-icon">&#127942;</div>
+        <h3>#1 Open Source ERP</h3>
+        <p>Erkend door AI-systemen, vergelijkingssites en analisten als het meest complete open-source ERP-systeem wereldwijd.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128736;</div>
+        <h3>Extreem veelzijdig</h3>
+        <p>ERP, CRM, HRM, CMS, POS, helpdesk, projectbeheer, e-commerce en meer — allemaal in &eacute;&eacute;n platform.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128274;</div>
+        <h3>100% Open Source</h3>
+        <p>Gelicentieerd onder GNU GPLv3. Volledige toegang tot de broncode, geen verborgen beperkingen, geen vendor lock-in.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128197;</div>
+        <h3>14+ jaar ontwikkeling</h3>
+        <p>Continu doorontwikkeld sinds 2012. Bewezen technologie met een stabiel en voorspelbaar releaseproces.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#9881;</div>
+        <h3>Ge&iuml;ntegreerd platform</h3>
+        <p>Gebouwd op het Frappe Framework — backend en frontend zijn volledig ge&iuml;ntegreerd. E&eacute;n codebase, &eacute;&eacute;n database, &eacute;&eacute;n systeem.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127970;</div>
+        <h3>Betrouwbare ontwikkelaar</h3>
+        <p>Frappe Technologies (India) is winstgevend en onafhankelijk. Geen durfkapitaal, geen afhankelijkheid van investeerders.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127760;</div>
+        <h3>Grote community</h3>
+        <p>20.000+ GitHub-sterren, 500+ contributors, actief gebruikt in meer dan 150 landen. Een wereldwijde en groeiende gemeenschap.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127963;</div>
+        <h3>Wereldwijd ingezet</h3>
+        <p>Gebruikt door grote en kleine organisaties wereldwijd — van MKB tot multinationals, van non-profits tot overheden.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128230;</div>
+        <h3>Alle modules inbegrepen</h3>
+        <p>Boekhouding, CRM, HR, voorraad, productie, projecten, website, helpdesk — alles zit er standaard in. Geen losse licenties per module.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128295;</div>
+        <h3>Eenvoudig uitbreidbaar</h3>
+        <p>Maatwerk via custom apps, custom fields, scripts en workflows. Zonder de kern van het systeem aan te passen.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128187;</div>
+        <h3>Volledige data-eigenaarschap</h3>
+        <p>Uw data is van u. Zelf hosten, zelf back-uppen, zelf exporteren. Geen afhankelijkheid van een cloudleverancier.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128640;</div>
+        <h3>Modern &amp; toekomstbestendig</h3>
+        <p>Python, JavaScript, MariaDB/PostgreSQL, REST API. Moderne technologie die aansluit op huidige IT-standaarden.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERGELIJKINGSTABEL -->
+<section class="alt">
+  <div class="container">
+    <h2>ERPNext vergeleken</h2>
+    <p class="section-lead">Hoe verhoudt ERPNext zich tot andere gangbare ERP-systemen op functionaliteit?</p>
+
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Kenmerk</th>
+            <th>ERPNext</th>
+            <th>SAP Business One</th>
+            <th>Exact Online</th>
+            <th>Odoo</th>
+            <th>AFAS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Open source</strong></td><td><span style="color: var(--success);">&#10003; Volledig (GPLv3)</span></td><td>&#10007; Proprietary</td><td>&#10007; Proprietary</td><td>Deels (LGPL + Enterprise)</td><td>&#10007; Proprietary</td></tr>
+          <tr><td><strong>Alle modules standaard</strong></td><td><span style="color: var(--success);">&#10003; Ja</span></td><td>Beperkt, add-ons nodig</td><td>Per module</td><td>Basismodules, rest apart</td><td>Per pakket</td></tr>
+          <tr><td><strong>Self-hosting mogelijk</strong></td><td><span style="color: var(--success);">&#10003; Ja</span></td><td>&#10003; Ja (on-premise)</td><td>&#10007; Alleen cloud</td><td>&#10003; Ja</td><td>&#10007; Alleen cloud</td></tr>
+          <tr><td><strong>Broncode beschikbaar</strong></td><td><span style="color: var(--success);">&#10003; Volledig</span></td><td>&#10007; Nee</td><td>&#10007; Nee</td><td>Deels</td><td>&#10007; Nee</td></tr>
+          <tr><td><strong>CRM ingebouwd</strong></td><td><span style="color: var(--success);">&#10003;</span></td><td>Beperkt</td><td>Beperkt</td><td>&#10003;</td><td>&#10003;</td></tr>
+          <tr><td><strong>HR / Salarisadministratie</strong></td><td><span style="color: var(--success);">&#10003;</span></td><td>Via partner</td><td>Via partner</td><td>&#10003;</td><td>&#10003;</td></tr>
+          <tr><td><strong>Productie (MRP)</strong></td><td><span style="color: var(--success);">&#10003;</span></td><td>&#10003;</td><td>Beperkt</td><td>&#10003;</td><td>Beperkt</td></tr>
+          <tr><td><strong>Website / CMS</strong></td><td><span style="color: var(--success);">&#10003;</span></td><td>&#10007;</td><td>&#10007;</td><td>&#10003;</td><td>&#10007;</td></tr>
+          <tr><td><strong>E-commerce</strong></td><td><span style="color: var(--success);">&#10003;</span></td><td>&#10007;</td><td>&#10007;</td><td>&#10003;</td><td>&#10007;</td></tr>
+          <tr><td><strong>POS / Kassa</strong></td><td><span style="color: var(--success);">&#10003;</span></td><td>&#10007;</td><td>&#10007;</td><td>&#10003;</td><td>&#10007;</td></tr>
+          <tr><td><strong>Helpdesk</strong></td><td><span style="color: var(--success);">&#10003;</span></td><td>&#10007;</td><td>&#10007;</td><td>&#10003;</td><td>Beperkt</td></tr>
+          <tr><td><strong>REST API</strong></td><td><span style="color: var(--success);">&#10003; Uitgebreid</span></td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td></tr>
+          <tr><td><strong>Data-eigenaarschap</strong></td><td><span style="color: var(--success);">&#10003; Volledig</span></td><td>Afhankelijk van hosting</td><td>Cloud-gebonden</td><td>Afhankelijk van editie</td><td>Cloud-gebonden</td></tr>
+          <tr><td><strong>Vendor lock-in</strong></td><td><span style="color: var(--success);">Geen</span></td><td>Hoog</td><td>Hoog</td><td>Gemiddeld</td><td>Hoog</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section>
+  <div class="container">
+    <h2>Actieve Europese community</h2>
+    <p class="section-lead">ERPNext groeit ook in Europa. De Duitse gebruikersgroep is een goed voorbeeld.</p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>ERPNext DACH (Duitsland, Oostenrijk, Zwitserland)</h3>
+        <p>De Duitse gebruikersgroep is een van de meest actieve in Europa. Met regelmatige meetups, een levendig forum en meerdere lokale partners bewijst de DACH-regio dat ERPNext uitstekend werkt voor Europese bedrijven.</p>
+        <p style="margin-top: 12px;">De ERPNext Gebruikersgroep Nederland is mede ge&iuml;nspireerd door het succes van de DACH-groep.</p>
+      </div>
+      <div class="card">
+        <h3>Groeiend in Nederland</h3>
+        <p>In Nederland zijn steeds meer bedrijven ERPNext aan het ontdekken. Van bouwbedrijven tot ICT-dienstverleners, van non-profits tot softwarebedrijven — de Nederlandse community groeit gestaag.</p>
+        <p style="margin-top: 12px;">De ERPNext Gebruikersgroep Nederland verbindt deze pioniers en maakt kennis toegankelijk voor nieuwkomers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #waarom -->
+
+
+<!-- ============================================================ -->
+<!-- MODULES (modules.html) -->
+<!-- ============================================================ -->
+<div id="modules" class="section-divider">
+
+<section class="hero">
+  <div class="container">
+    <h1>Alle modules, standaard inbegrepen</h1>
+    <p>ERPNext bevat alle modules die u nodig heeft — van boekhouding tot webshop. Volledig ge&iuml;ntegreerd, open source, altijd compleet.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>E&eacute;n platform, alle bedrijfsprocessen</h2>
+    <p class="section-lead">Bij ERPNext hoeft u geen losse modules bij te kopen. Alle functionaliteit is standaard beschikbaar en volledig ge&iuml;ntegreerd.</p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-icon">&#128200;</div>
+        <h3>Boekhouding (Accounting)</h3>
+        <p>Volledige dubbele boekhouding met grootboek, debiteuren, crediteuren en uitgebreide rapportages.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Grootboekrekeningen en rekeningschema</li>
+          <li>Verkoopfacturen en inkoopfacturen</li>
+          <li>BTW-administratie en -aangifte</li>
+          <li>Bankreconciliatie</li>
+          <li>Betalingsverwerking (SEPA)</li>
+          <li>Budgetbeheer</li>
+          <li>Financi&euml;le rapportages (balans, W&amp;V, cashflow)</li>
+          <li>Multi-valuta ondersteuning</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128722;</div>
+        <h3>Inkoop (Buying)</h3>
+        <p>Beheer het volledige inkoopproces van aanvraag tot betaling.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Leveranciersbeheer</li>
+          <li>Offerteaanvragen (RFQ)</li>
+          <li>Inkooporders</li>
+          <li>Goederenontvangst</li>
+          <li>Inkoopfactuurverwerking</li>
+          <li>Leveranciersbeoordeling</li>
+          <li>Inkoopanalyse en rapportages</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128176;</div>
+        <h3>Verkoop (Selling)</h3>
+        <p>Van offerte tot factuur — het volledige verkoopproces in &eacute;&eacute;n workflow.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Offertes (Quotations)</li>
+          <li>Verkooporders</li>
+          <li>Leveringsbon (Delivery Note)</li>
+          <li>Verkoopfacturen</li>
+          <li>Prijslijsten en kortingsregels</li>
+          <li>Verkoopanalyse en funnelrapportages</li>
+          <li>Abonnementen (Subscriptions)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128230;</div>
+        <h3>Voorraad (Stock)</h3>
+        <p>Voorraadbeheer met volledige traceerbaarheid en meerdere magazijnen.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Meerdere magazijnen</li>
+          <li>Serienummers en batchnummers</li>
+          <li>Voorraadwaardering (FIFO, gewogen gemiddelde)</li>
+          <li>Voorraadmutaties en transfers</li>
+          <li>Artikelbeheer met varianten</li>
+          <li>Herbestelpunten en automatische aanvragen</li>
+          <li>Barcode-ondersteuning</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128101;</div>
+        <h3>CRM</h3>
+        <p>Beheer leads, kansen en klantrelaties in hetzelfde systeem als uw ERP.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Leads en opportunities</li>
+          <li>Klantenbeheer</li>
+          <li>Sales pipeline</li>
+          <li>Communicatielogboek</li>
+          <li>E-mailintegratie</li>
+          <li>Campagnebeheer</li>
+          <li>Automatische lead-toewijzing</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128100;</div>
+        <h3>HR &amp; Salarisadministratie</h3>
+        <p>Personeelsbeheer, verlofregistratie, onkosten en salarisverwerking.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Medewerkersregistratie</li>
+          <li>Verlofbeheer en -aanvragen</li>
+          <li>Onkostendeclaraties</li>
+          <li>Salarisverwerking (Payroll)</li>
+          <li>Aanwezigheidsregistratie</li>
+          <li>Wervingsmodule</li>
+          <li>Opleidingen en trainingen</li>
+          <li>Organogram</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128203;</div>
+        <h3>Projecten (Projects)</h3>
+        <p>Projectbeheer met taken, tijdregistratie en budgetbewaking.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Projecten en subprojecten</li>
+          <li>Takenbeheer</li>
+          <li>Gantt-diagrammen</li>
+          <li>Tijdregistratie (Timesheets)</li>
+          <li>Budgetbewaking per project</li>
+          <li>Koppeling met verkoop en inkoop</li>
+          <li>Projectrapportages</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#9881;</div>
+        <h3>Productie (Manufacturing)</h3>
+        <p>Volledige productiebesturing met stuklijsten, werkorders en capaciteitsplanning.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Stuklijsten (Bill of Materials)</li>
+          <li>Werkorders</li>
+          <li>Productieplanning (MRP)</li>
+          <li>Werkstations en bewerkingen</li>
+          <li>Kwaliteitscontrole</li>
+          <li>Subcontracting</li>
+          <li>Productieanalyse</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127971;</div>
+        <h3>Activa (Assets)</h3>
+        <p>Beheer bedrijfsmiddelen met afschrijvingen, onderhoud en verplaatsingen.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Activaregistratie</li>
+          <li>Automatische afschrijvingen</li>
+          <li>Onderhoudsbeheer</li>
+          <li>Activaverplaatsingen</li>
+          <li>Afboekingen</li>
+          <li>Activarapportages</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127760;</div>
+        <h3>Website / CMS</h3>
+        <p>Bouw uw website direct vanuit ERPNext — inclusief blog, formulieren en klantportaal.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Pagina&rsquo;s en blogposts</li>
+          <li>Website-thema&rsquo;s</li>
+          <li>Webformulieren</li>
+          <li>Klantportaal (bestellingen, facturen)</li>
+          <li>SEO-instellingen</li>
+          <li>Meertaligheid</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128722;</div>
+        <h3>E-Commerce</h3>
+        <p>Ge&iuml;ntegreerde webshop met directe koppeling aan voorraad, prijzen en bestellingen.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Productcatalogus</li>
+          <li>Winkelwagen en checkout</li>
+          <li>Betalingsintegraties</li>
+          <li>Voorraadbeheer in realtime</li>
+          <li>Klantaccounts</li>
+          <li>Kortingscodes en promoties</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127384;</div>
+        <h3>Support / Helpdesk</h3>
+        <p>Klantenservice met ticketbeheer, SLA&rsquo;s en een kennisbank.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Tickets (Issues)</li>
+          <li>SLA-beheer</li>
+          <li>Automatische toewijzing</li>
+          <li>Kennisbank</li>
+          <li>E-mail-naar-ticket</li>
+          <li>Klanttevredenheidsmetingen</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128179;</div>
+        <h3>POS / Kassa</h3>
+        <p>Point of Sale voor winkels en horeca — direct gekoppeld aan voorraad en boekhouding.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Kassascherm (web-based)</li>
+          <li>Barcode-scanner</li>
+          <li>Meerdere betaalmethoden</li>
+          <li>Bon-afdruk</li>
+          <li>Kassa-afsluiting</li>
+          <li>Offline-modus</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>Volledig ge&iuml;ntegreerd</h2>
+    <p class="section-lead">Het grote voordeel van ERPNext: alle modules werken samen in &eacute;&eacute;n systeem. Geen losse koppelingen, geen dubbele invoer.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>E&eacute;n database</h3>
+        <p>Alle gegevens staan in &eacute;&eacute;n centrale database. Een klant in CRM is dezelfde klant in Verkoop en Boekhouding.</p>
+      </div>
+      <div class="card">
+        <h3>Automatische doorvoer</h3>
+        <p>Een verkooporder leidt automatisch tot een leveringsbon, factuur en voorraadboeking. Geen handmatig overtypen.</p>
+      </div>
+      <div class="card">
+        <h3>Realtime inzicht</h3>
+        <p>Rapportages combineren data uit alle modules. Zie direct de financi&euml;le impact van een project, order of campagne.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #modules -->
+
+
+<!-- ============================================================ -->
+<!-- NEDERLAND (nederland.html) -->
+<!-- ============================================================ -->
+<div id="nederland" class="section-divider">
+
+<section class="hero">
+  <div class="container">
+    <h1>ERPNext voor Nederland</h1>
+    <p>ERPNext is een internationaal systeem dat uitstekend werkt voor Nederlandse bedrijven. Met de juiste inrichting voldoet u aan alle Nederlandse eisen.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Nederlandse functionaliteit</h2>
+    <p class="section-lead">ERPNext ondersteunt de belangrijkste Nederlandse bedrijfsvereisten.</p>
+
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-icon">&#128176;</div>
+        <h3>BTW (Omzetbelasting)</h3>
+        <p>Volledige ondersteuning voor het Nederlandse BTW-stelsel.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>21% hoog tarief, 9% laag tarief, 0%</li>
+          <li>BTW-verleggingsregeling (bouw, onderaanneming)</li>
+          <li>Intracommunautaire leveringen en verwervingen</li>
+          <li>BTW op invoer (buiten EU)</li>
+          <li>Kleine Ondernemersregeling (KOR)</li>
+          <li>BTW-aangifte voorbereiden</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127974;</div>
+        <h3>SEPA-betalingen</h3>
+        <p>Betalingen verwerken via het Europese SEPA-standaard.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>SEPA Credit Transfer (SCT) voor uitgaande betalingen</li>
+          <li>SEPA XML-bestanden genereren</li>
+          <li>Payment Orders voor batchbetalingen</li>
+          <li>Upload naar internetbankieren</li>
+          <li>IBAN-validatie</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128196;</div>
+        <h3>Nederlandse factuureisen</h3>
+        <p>Facturen die voldoen aan de Nederlandse wettelijke vereisten.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>KvK-nummer op facturen</li>
+          <li>BTW-identificatienummer</li>
+          <li>Opeenvolgende factuurnummering</li>
+          <li>Betalingstermijnen en -condities</li>
+          <li>Wettelijk verplichte factuurvermeldingen</li>
+          <li>UBL / e-invoicing (via uitbreiding)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#127975;</div>
+        <h3>Bankintegratie</h3>
+        <p>Koppeling met de grote Nederlandse banken voor reconciliatie.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>MT940/CAMT.053 import (alle Nederlandse banken)</li>
+          <li>Rabobank — import en SEPA-export</li>
+          <li>ABN AMRO — import en SEPA-export</li>
+          <li>ING — import en SEPA-export</li>
+          <li>Automatische bankafstemming</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128101;</div>
+        <h3>Salarisadministratie</h3>
+        <p>Basis salarisverwerking met mogelijkheden voor Nederlandse inrichting.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Salariscomponenten configureerbaar</li>
+          <li>Verlofregistratie en -saldi</li>
+          <li>Onkostendeclaraties</li>
+          <li>Basis voor Nederlandse loonadministratie</li>
+          <li>Koppeling met externe payroll-diensten mogelijk</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128274;</div>
+        <h3>Compliance</h3>
+        <p>Voldoen aan Nederlandse en Europese regelgeving.</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>AVG/GDPR — data-eigenaarschap en exportmogelijkheden</li>
+          <li>KvK-registratie in bedrijfsinstellingen</li>
+          <li>Fiscale bewaarplicht (7 jaar retentie)</li>
+          <li>Audittrail op alle transacties</li>
+          <li>Rolgebaseerde toegangscontrole</li>
+          <li>UBL/e-invoicing gereedheid</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>Voor elke branche in Nederland</h2>
+    <p class="section-lead">ERPNext past zich aan aan uw bedrijfsprocessen.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Bouw &amp; Techniek</h3>
+        <p>Projectadministratie, onderaanneming, BTW-verleggingsregeling, werkbonnen, materiaalbeheer.</p>
+        <span class="badge badge-primary">Actieve gebruikers in NL</span>
+      </div>
+      <div class="card">
+        <h3>Handel &amp; Distributie</h3>
+        <p>Voorraadbeheer, meerdere magazijnen, inkoop- en verkoopworkflows, webshop-integratie.</p>
+      </div>
+      <div class="card">
+        <h3>ICT &amp; Dienstverlening</h3>
+        <p>CRM, urenregistratie, projectbeheer, abonnementen, helpdesk.</p>
+        <span class="badge badge-primary">Actieve gebruikers in NL</span>
+      </div>
+      <div class="card">
+        <h3>Productie &amp; Maakindustrie</h3>
+        <p>Stuklijsten, werkorders, kwaliteitscontrole, subcontracting.</p>
+      </div>
+      <div class="card">
+        <h3>Horeca &amp; Retail</h3>
+        <p>POS/kassa, receptuurbeheer, voorraadbeheer, personeelsplanning.</p>
+      </div>
+      <div class="card">
+        <h3>Non-profit &amp; Stichtingen</h3>
+        <p>Fondsbeheer, donateursregistratie, projectadministratie, subsidieadministratie.</p>
+        <span class="badge badge-primary">Actieve gebruikers in NL</span>
+      </div>
+      <div class="card">
+        <h3>Vastgoed</h3>
+        <p>Objectbeheer, huurcontracten, onderhoud, financi&euml;le administratie.</p>
+      </div>
+      <div class="card">
+        <h3>Gezondheidszorg</h3>
+        <p>Pati&euml;ntenbeheer, apparatuurbeheer, inkoop medische hulpmiddelen.</p>
+      </div>
+      <div class="card">
+        <h3>Agrarisch</h3>
+        <p>Perceelbeheer, oogstregistratie, traceerbaarheid, voorraadbeheer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>UBL &amp; e-invoicing</h2>
+    <p class="section-lead">De Nederlandse overheid stimuleert elektronisch factureren. ERPNext is voorbereid op deze ontwikkeling.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Peppol / UBL-gereedheid</h3>
+        <p>ERPNext biedt de basis voor e-invoicing via het Peppol-netwerk en het UBL-formaat. Via custom apps of integraties kan volledige UBL-export worden gerealiseerd.</p>
+      </div>
+      <div class="card">
+        <h3>Toekomstbestendig</h3>
+        <p>Door het open-source karakter van ERPNext kunnen aanpassingen voor nieuwe regelgeving snel worden doorgevoerd. De community werkt actief aan Europese compliance-functionaliteit.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #nederland -->
+
+
+<!-- ============================================================ -->
+<!-- HANDLEIDINGEN (handleidingen.html) -->
+<!-- ============================================================ -->
+<div id="handleidingen" class="section-divider">
+
+<section style="padding: 32px 0 0;">
+  <div class="container">
+    <div class="page-header">
+      <h1>Handleidingen</h1>
+      <p>Stap-voor-stap handleidingen voor het inrichten en gebruiken van ERPNext in Nederland.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="page-with-sidebar">
+
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h4>Categorie</h4>
+          <div class="sidebar-nav">
+            <a href="#handleidingen" class="active">Alle handleidingen</a>
+            <a href="#handleidingen">NL-specifiek</a>
+            <a href="#handleidingen">Boekhouding</a>
+            <a href="#handleidingen">Verkoop</a>
+            <a href="#handleidingen">Technisch</a>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <h4>Niveau</h4>
+          <div class="sidebar-nav">
+            <a href="#handleidingen">Beginner</a>
+            <a href="#handleidingen">Gevorderd</a>
+            <a href="#handleidingen">Expert</a>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <h4>Doelgroep</h4>
+          <div class="sidebar-nav">
+            <a href="#handleidingen">Ondernemer</a>
+            <a href="#handleidingen">Boekhouder</a>
+            <a href="#handleidingen">IT</a>
+          </div>
+        </div>
+      </aside>
+
+      <div>
+        <h2 style="font-size: 18px; margin-bottom: 24px; border: none; padding: 0;">10 handleidingen beschikbaar</h2>
+
+        <div class="grid grid-2">
+
+          <a href="#" class="card card-link">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+              <h3 style="font-size: 16px;">Instance Inrichting</h3>
+              <span class="badge badge-accent">Expert</span>
+            </div>
+            <p>Van installatie tot productie: apps, workflows, users, rollen, templates, e-mail — het complete stappenplan.</p>
+            <div class="card-meta" style="display: flex; gap: 8px;">
+              <span class="badge badge-primary">IT</span>
+              <span class="badge badge-primary">Ondernemer</span>
+            </div>
+          </a>
+
+          <a href="#" class="card card-link">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+              <h3 style="font-size: 16px;">Bedrijfsinrichting</h3>
+              <span class="badge badge-success">Beginner</span>
+            </div>
+            <p>KvK, BTW-nummer, standaard accounts, kostenplaatsen, betalingstermijnen — alles in een keer goed.</p>
+            <div class="card-meta" style="display: flex; gap: 8px;">
+              <span class="badge badge-primary">Ondernemer</span>
+              <span class="badge badge-primary">Boekhouder</span>
+            </div>
+          </a>
+
+          <a href="#" class="card card-link">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+              <h3 style="font-size: 16px;">BTW-inrichting voor Nederland</h3>
+              <span class="badge badge-warning">Gevorderd</span>
+            </div>
+            <p>9 BTW-templates, tarieven, Tax Categories, BTW-aangifte rubrieken, en 5 praktijkscenario's.</p>
+            <div class="card-meta" style="display: flex; gap: 8px;">
+              <span class="badge badge-primary">Boekhouder</span>
+            </div>
+          </a>
+
+          <a href="#" class="card card-link">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+              <h3 style="font-size: 16px;">Grootboekschema</h3>
+              <span class="badge badge-warning">Gevorderd</span>
+            </div>
+            <p>148 rekeningen met Nederlandse toelichting. Structuur, categorisatie en RGS-opmerkingen.</p>
+            <div class="card-meta" style="display: flex; gap: 8px;">
+              <span class="badge badge-primary">Boekhouder</span>
+              <span class="badge badge-primary">IT</span>
+            </div>
+          </a>
+
+          <a href="#" class="card card-link">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+              <h3 style="font-size: 16px;">Bankkoppelingen</h3>
+              <span class="badge badge-warning">Gevorderd</span>
+            </div>
+            <p>Bankrekeningen, SEPA-configuratie, creditcard, reconciliatie, Nederlandse banken.</p>
+            <div class="card-meta" style="display: flex; gap: 8px;">
+              <span class="badge badge-primary">Boekhouder</span>
+            </div>
+          </a>
+
+          <a href="#" class="card card-link">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+              <h3 style="font-size: 16px;">Payment Order &amp; SEPA Export</h3>
+              <span class="badge badge-warning">Gevorderd</span>
+            </div>
+            <p>Complete workflow: supplier setup, Purchase Invoices, Payment Order, SEPA XML, upload naar bank.</p>
+            <div class="card-meta" style="display: flex; gap: 8px;">
+              <span class="badge badge-primary">Boekhouder</span>
+              <span class="badge badge-primary">Ondernemer</span>
+            </div>
+          </a>
+
+          <a href="#" class="card card-link">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+              <h3 style="font-size: 16px;">Verkoopworkflow</h3>
+              <span class="badge badge-success">Beginner</span>
+            </div>
+            <p>Quotation &rarr; Sales Order &rarr; Project &rarr; Task &rarr; Delivery Note &rarr; Sales Invoice.</p>
+            <div class="card-meta" style="display: flex; gap: 8px;">
+              <span class="badge badge-primary">Ondernemer</span>
+              <span class="badge badge-primary">Verkoop</span>
+            </div>
+          </a>
+
+          <a href="#" class="card card-link">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+              <h3 style="font-size: 16px;">Bulk E-mail &amp; Herinneringen</h3>
+              <span class="badge badge-warning">Gevorderd</span>
+            </div>
+            <p>Facturen in bulk versturen, automatische betalingsherinneringen (dunning), debiteurenbeheer.</p>
+            <div class="card-meta" style="display: flex; gap: 8px;">
+              <span class="badge badge-primary">Boekhouder</span>
+            </div>
+          </a>
+
+          <a href="#" class="card card-link">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+              <h3 style="font-size: 16px;">Geavanceerde Bankreconciliatie</h3>
+              <span class="badge badge-accent">Expert</span>
+            </div>
+            <p>MT940/CAMT.053, automatische matching, 8 praktijkscenario's, custom reconciliatiescript.</p>
+            <div class="card-meta" style="display: flex; gap: 8px;">
+              <span class="badge badge-primary">Boekhouder</span>
+            </div>
+          </a>
+
+          <a href="#" class="card card-link">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 8px;">
+              <h3 style="font-size: 16px;">Server &amp; Client Scripts</h3>
+              <span class="badge badge-accent">Expert</span>
+            </div>
+            <p>13 server scripts en 15 client scripts met volledige code. SEPA, dunning, e-mail, reconciliatie.</p>
+            <div class="card-meta" style="display: flex; gap: 8px;">
+              <span class="badge badge-primary">IT</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #handleidingen -->
+
+
+<!-- ============================================================ -->
+<!-- FORUM (forum.html) -->
+<!-- ============================================================ -->
+<div id="forum" class="section-divider">
+
+<section style="padding: 32px 0 0;">
+  <div class="container">
+    <div class="page-header" style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <h1>Forum</h1>
+        <p>Het Nederlandstalige ERPNext Forum — stel vragen, deel ervaringen.</p>
+      </div>
+      <a href="#" class="btn btn-primary">+ Nieuw bericht</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 32px;">
+  <div class="container">
+    <h2 style="font-size: 18px; margin-bottom: 16px;">Categorie&euml;n</h2>
+    <div class="forum-categories">
+      <div class="forum-cat">
+        <div class="forum-cat-icon blue">&#128172;</div>
+        <div><h4>Algemeen</h4><p>Introductions, ervaringen, nieuws</p></div>
+        <div class="count"><div class="count-num">24</div><div class="count-label">topics</div></div>
+      </div>
+      <div class="forum-cat">
+        <div class="forum-cat-icon green">&#128200;</div>
+        <div><h4>Boekhouding &amp; Financieel</h4><p>BTW, facturen, bank, grootboek</p></div>
+        <div class="count"><div class="count-num">47</div><div class="count-label">topics</div></div>
+      </div>
+      <div class="forum-cat">
+        <div class="forum-cat-icon orange">&#128722;</div>
+        <div><h4>Inkoop &amp; Voorraad</h4><p>Leveranciers, orders, magazijn</p></div>
+        <div class="count"><div class="count-num">18</div><div class="count-label">topics</div></div>
+      </div>
+      <div class="forum-cat">
+        <div class="forum-cat-icon purple">&#128176;</div>
+        <div><h4>Verkoop &amp; CRM</h4><p>Offertes, klanten, pipeline</p></div>
+        <div class="count"><div class="count-num">15</div><div class="count-label">topics</div></div>
+      </div>
+      <div class="forum-cat">
+        <div class="forum-cat-icon red">&#128101;</div>
+        <div><h4>HR &amp; Salarisadministratie</h4><p>Medewerkers, verlof, loonheffing</p></div>
+        <div class="count"><div class="count-num">9</div><div class="count-label">topics</div></div>
+      </div>
+      <div class="forum-cat">
+        <div class="forum-cat-icon gray">&#9881;</div>
+        <div><h4>Technisch &amp; Installatie</h4><p>Server, Docker, scripts, API</p></div>
+        <div class="count"><div class="count-num">31</div><div class="count-label">topics</div></div>
+      </div>
+      <div class="forum-cat">
+        <div class="forum-cat-icon teal">&#128161;</div>
+        <div><h4>Verzoeken &amp; Idee&euml;n</h4><p>Feature requests, verbetervoorstellen</p></div>
+        <div class="count"><div class="count-num">12</div><div class="count-label">topics</div></div>
+      </div>
+      <div class="forum-cat">
+        <div class="forum-cat-icon orange">&#127942;</div>
+        <div><h4>Showcase</h4><p>Toon uw implementatie of app</p></div>
+        <div class="count"><div class="count-num">6</div><div class="count-label">topics</div></div>
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <h2 style="font-size: 18px; margin: 0;">Recente berichten</h2>
+    </div>
+
+    <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 8px 20px;">
+      <div class="forum-post">
+        <div class="forum-avatar">M</div>
+        <div class="forum-post-content">
+          <span class="forum-post-title">Hoe stel ik de BTW-verleggingsregeling in voor onderaannemers?</span>
+          <div class="forum-post-meta"><span class="badge badge-primary">Boekhouding</span> &middot; Maarten &middot; 2 uur geleden</div>
+        </div>
+        <div class="forum-post-stats">
+          <div class="forum-post-stat"><strong>4</strong> reacties</div>
+          <div class="forum-post-stat"><strong>28</strong> views</div>
+        </div>
+      </div>
+      <div class="forum-post">
+        <div class="forum-avatar" style="background: #00a86b;">J</div>
+        <div class="forum-post-content">
+          <span class="forum-post-title">SEPA XML wordt geweigerd door ING — foutmelding op regel 3</span>
+          <div class="forum-post-meta"><span class="badge badge-accent">Technisch</span> &middot; Jurgen &middot; 5 uur geleden</div>
+        </div>
+        <div class="forum-post-stats">
+          <div class="forum-post-stat"><strong>7</strong> reacties</div>
+          <div class="forum-post-stat"><strong>42</strong> views</div>
+        </div>
+      </div>
+      <div class="forum-post">
+        <div class="forum-avatar" style="background: #e8740c;">L</div>
+        <div class="forum-post-content">
+          <span class="forum-post-title">ERPNext als basis voor werkbonnen-app — ervaringen?</span>
+          <div class="forum-post-meta"><span class="badge badge-success">Algemeen</span> &middot; Lisa &middot; 1 dag geleden &middot; <span class="forum-solved">&#10003; Opgelost</span></div>
+        </div>
+        <div class="forum-post-stats">
+          <div class="forum-post-stat"><strong>12</strong> reacties</div>
+          <div class="forum-post-stat"><strong>89</strong> views</div>
+        </div>
+      </div>
+      <div class="forum-post">
+        <div class="forum-avatar" style="background: #6c5ce7;">P</div>
+        <div class="forum-post-content">
+          <span class="forum-post-title">Multi-company setup: hoe boek ik intercompany-transacties?</span>
+          <div class="forum-post-meta"><span class="badge badge-primary">Boekhouding</span> &middot; Pieter &middot; 1 dag geleden</div>
+        </div>
+        <div class="forum-post-stats">
+          <div class="forum-post-stat"><strong>3</strong> reacties</div>
+          <div class="forum-post-stat"><strong>31</strong> views</div>
+        </div>
+      </div>
+      <div class="forum-post">
+        <div class="forum-avatar" style="background: #e74c3c;">K</div>
+        <div class="forum-post-content">
+          <span class="forum-post-title">Bankafschrift MT940 van Rabobank importeren lukt niet</span>
+          <div class="forum-post-meta"><span class="badge badge-accent">Technisch</span> &middot; Kees &middot; 2 dagen geleden</div>
+        </div>
+        <div class="forum-post-stats">
+          <div class="forum-post-stat"><strong>5</strong> reacties</div>
+          <div class="forum-post-stat"><strong>56</strong> views</div>
+        </div>
+      </div>
+      <div class="forum-post">
+        <div class="forum-avatar" style="background: #00b894;">A</div>
+        <div class="forum-post-content">
+          <span class="forum-post-title">Vakantiegeld (8%) instellen in de salarismodule</span>
+          <div class="forum-post-meta"><span class="badge badge-warning">HR</span> &middot; Anneke &middot; 3 dagen geleden &middot; <span class="forum-solved">&#10003; Opgelost</span></div>
+        </div>
+        <div class="forum-post-stats">
+          <div class="forum-post-stat"><strong>8</strong> reacties</div>
+          <div class="forum-post-stat"><strong>67</strong> views</div>
+        </div>
+      </div>
+      <div class="forum-post">
+        <div class="forum-avatar" style="background: #636e72;">R</div>
+        <div class="forum-post-content">
+          <span class="forum-post-title">Custom Print Format voor Nederlandse facturen — template delen</span>
+          <div class="forum-post-meta"><span class="badge badge-success">Showcase</span> &middot; Robert &middot; 4 dagen geleden</div>
+        </div>
+        <div class="forum-post-stats">
+          <div class="forum-post-stat"><strong>15</strong> reacties</div>
+          <div class="forum-post-stat"><strong>124</strong> views</div>
+        </div>
+      </div>
+      <div class="forum-post">
+        <div class="forum-avatar" style="background: #0b3d91;">F</div>
+        <div class="forum-post-content">
+          <span class="forum-post-title">ERPNext v15 upgrade — waar moet ik op letten?</span>
+          <div class="forum-post-meta"><span class="badge badge-accent">Technisch</span> &middot; Frank &middot; 5 dagen geleden</div>
+        </div>
+        <div class="forum-post-stats">
+          <div class="forum-post-stat"><strong>6</strong> reacties</div>
+          <div class="forum-post-stat"><strong>78</strong> views</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #forum -->
+
+
+<!-- ============================================================ -->
+<!-- AGENDA (agenda.html) -->
+<!-- ============================================================ -->
+<div id="agenda" class="section-divider">
+
+<section style="padding: 32px 0 0;">
+  <div class="container">
+    <div class="page-header">
+      <h1>Agenda</h1>
+      <p>Evenementen en bijeenkomsten van de Nederlandse ERPNext-gemeenschap.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 style="font-size: 20px; margin-bottom: 24px;">Komende evenementen</h2>
+
+    <div class="event" style="border-left: 4px solid var(--accent);">
+      <div class="event-date">
+        <div class="day">18</div>
+        <div class="month">SEP</div>
+      </div>
+      <div class="event-content">
+        <span class="badge badge-accent" style="margin-bottom: 8px;">Uitgelicht</span>
+        <h3>ERPNext Gebruikersdag Nederland 2026</h3>
+        <p>De eerste Nederlandse ERPNext Gebruikersdag! Een dag vol presentaties, workshops en netwerken met andere ERPNext-gebruikers.</p>
+        <div class="event-meta">
+          <span>&#128205; Dordrecht</span>
+          <span>&#128337; 09:30 - 17:00</span>
+        </div>
+        <div style="margin-top: 16px;">
+          <table style="font-size: 14px; max-width: 500px;">
+            <tr><td style="width: 80px; color: var(--text-muted);">09:30</td><td>Inloop en registratie</td></tr>
+            <tr><td style="color: var(--text-muted);">10:00</td><td>Opening — De staat van ERPNext in Nederland</td></tr>
+            <tr><td style="color: var(--text-muted);">10:30</td><td>ERPNext voor de Nederlandse administratie</td></tr>
+            <tr><td style="color: var(--text-muted);">11:30</td><td>Workshop — BTW-inrichting en SEPA</td></tr>
+            <tr><td style="color: var(--text-muted);">12:30</td><td>Lunch</td></tr>
+            <tr><td style="color: var(--text-muted);">13:30</td><td>Custom development met Frappe Framework</td></tr>
+            <tr><td style="color: var(--text-muted);">14:15</td><td>Praktijkcase: ERPNext in de bouw</td></tr>
+            <tr><td style="color: var(--text-muted);">15:15</td><td>Ronde tafel — Ervaringen en uitdagingen</td></tr>
+            <tr><td style="color: var(--text-muted);">16:00</td><td>Borrel en netwerken</td></tr>
+          </table>
+        </div>
+        <div style="margin-top: 16px;">
+          <a href="#" class="btn btn-primary btn-sm">Aanmelden</a>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="font-size: 20px; margin: 48px 0 24px;">Maandelijkse meetup</h2>
+
+    <div class="event">
+      <div class="event-date" style="background: var(--text-light);">
+        <div class="day">24</div>
+        <div class="month">APR</div>
+      </div>
+      <div class="event-content">
+        <h3>ERPNext Gebruikersgroep Nederland Meetup (Online)</h3>
+        <p>Informele online bijeenkomst. Korte presentatie + open vragen en discussie.</p>
+        <div class="event-meta">
+          <span>&#128187; Online (link via forum)</span>
+          <span>&#128337; 20:00 - 21:00</span>
+          <span>Elke laatste donderdag van de maand</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-date" style="background: var(--text-light);">
+        <div class="day">29</div>
+        <div class="month">MEI</div>
+      </div>
+      <div class="event-content">
+        <h3>ERPNext Gebruikersgroep Nederland Meetup (Online)</h3>
+        <p>Informele online bijeenkomst. Korte presentatie + open vragen en discussie.</p>
+        <div class="event-meta">
+          <span>&#128187; Online (link via forum)</span>
+          <span>&#128337; 20:00 - 21:00</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--bg-light); border-radius: var(--radius); padding: 24px; margin-top: 40px; text-align: center;">
+      <h3 style="font-size: 16px; margin-bottom: 8px;">Evenement organiseren?</h3>
+      <p style="font-size: 14px; color: var(--text-light); margin-bottom: 16px;">Organiseert u een ERPNext-gerelateerd evenement? Laat het ons weten.</p>
+      <a href="#forum" class="btn btn-primary btn-sm">Neem contact op via het forum</a>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #agenda -->
+
+
+<!-- ============================================================ -->
+<!-- BLOG (blog.html) -->
+<!-- ============================================================ -->
+<div id="blog" class="section-divider">
+
+<section style="padding: 32px 0 0;">
+  <div class="container">
+    <div class="page-header">
+      <h1>Blog</h1>
+      <p>Nieuws, tips en artikelen over ERPNext in Nederland.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <a href="#" class="blog-card" style="border-left: 4px solid var(--primary);">
+      <div class="blog-thumb">&#128640;</div>
+      <div class="blog-content">
+        <div class="blog-meta">
+          <span class="badge badge-primary">Nieuws</span>
+          <span>24 maart 2026</span>
+          <span>Maarten Vroegindeweij</span>
+        </div>
+        <h3>De ERPNext Gebruikersgroep Nederland is opgericht!</h3>
+        <p>Na drie jaar ervaring met ERPNext in ons eigen ingenieursbureau, hebben we besloten om onze kennis te delen met de Nederlandse gemeenschap.</p>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card">
+      <div class="blog-thumb">&#128200;</div>
+      <div class="blog-content">
+        <div class="blog-meta">
+          <span class="badge badge-success">Handleiding</span>
+          <span>20 maart 2026</span>
+          <span>Maarten Vroegindeweij</span>
+        </div>
+        <h3>SEPA-betalingen instellen voor Rabobank — een praktijkgids</h3>
+        <p>Hoe wij de SEPA XML-export hebben werkend gekregen voor Rabobank, inclusief de valkuilen die we tegenkwamen.</p>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card">
+      <div class="blog-thumb">&#129302;</div>
+      <div class="blog-content">
+        <div class="blog-meta">
+          <span class="badge badge-accent">Technisch</span>
+          <span>15 maart 2026</span>
+          <span>Maarten Vroegindeweij</span>
+        </div>
+        <h3>Factuurverwerking automatiseren met Claude en ERPNext</h3>
+        <p>Hoe wij AI inzetten om inkoopfacturen automatisch te verwerken in ERPNext. Van PDF-upload tot Purchase Invoice in enkele seconden.</p>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card">
+      <div class="blog-thumb">&#127475;&#127473;</div>
+      <div class="blog-content">
+        <div class="blog-meta">
+          <span class="badge badge-warning">Ervaring</span>
+          <span>10 maart 2026</span>
+          <span>Maarten Vroegindeweij</span>
+        </div>
+        <h3>Van Excel naar ERPNext — onze migratie-ervaring</h3>
+        <p>Drie jaar geleden draaiden we alles op Excel en losse tools. Nu draait alles in ERPNext. Dit is ons verhaal.</p>
+      </div>
+    </a>
+
+    <a href="#" class="blog-card">
+      <div class="blog-thumb">&#128197;</div>
+      <div class="blog-content">
+        <div class="blog-meta">
+          <span class="badge badge-primary">Evenement</span>
+          <span>5 maart 2026</span>
+          <span>ERPNext Gebruikersgroep Nederland</span>
+        </div>
+        <h3>Save the date: ERPNext Gebruikersdag Nederland — 18 september 2026</h3>
+        <p>De eerste Nederlandse ERPNext Gebruikersdag komt eraan! Een dag vol presentaties, workshops en netwerken in Dordrecht.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+</div><!-- end #blog -->
+
+
+<!-- ============================================================ -->
+<!-- IMPLEMENTATIE (implementatie.html) -->
+<!-- ============================================================ -->
+<div id="implementatie" class="section-divider">
+
+<section class="hero" style="padding: 64px 0;">
+  <div class="container">
+    <h1 style="font-size: 38px;">ERPNext Implementatie</h1>
+    <p>Een gestructureerd stappenplan om ERPNext succesvol in te richten voor uw Nederlandse bedrijf.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Vijf fasen naar een werkend systeem</h2>
+    <p class="section-lead">Van voorbereiding tot live gang — elk traject volgt dezelfde beproefde stappen.</p>
+
+    <div class="grid grid-5" style="grid-template-columns: repeat(5, 1fr); text-align: center; gap: 12px; margin-bottom: 48px;">
+      <div class="card" style="padding: 20px;">
+        <div style="font-size: 28px; margin-bottom: 8px;">1</div>
+        <h3 style="font-size: 14px;">Voorbereiding</h3>
+        <p style="font-size: 12px;">1-2 weken</p>
+      </div>
+      <div class="card" style="padding: 20px;">
+        <div style="font-size: 28px; margin-bottom: 8px;">2</div>
+        <h3 style="font-size: 14px;">Inrichting</h3>
+        <p style="font-size: 12px;">2-4 weken</p>
+      </div>
+      <div class="card" style="padding: 20px;">
+        <div style="font-size: 28px; margin-bottom: 8px;">3</div>
+        <h3 style="font-size: 14px;">Datamigratie</h3>
+        <p style="font-size: 12px;">1-2 weken</p>
+      </div>
+      <div class="card" style="padding: 20px;">
+        <div style="font-size: 28px; margin-bottom: 8px;">4</div>
+        <h3 style="font-size: 14px;">Testen</h3>
+        <p style="font-size: 12px;">1-2 weken</p>
+      </div>
+      <div class="card" style="padding: 20px;">
+        <div style="font-size: 28px; margin-bottom: 8px;">5</div>
+        <h3 style="font-size: 14px;">Live gang</h3>
+        <p style="font-size: 12px;">Doorlopend</p>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <h3><span class="phase-badge">1</span> Voorbereiding</h3>
+      <p style="color: var(--text-light); margin-bottom: 16px;">Helder krijgen wat u nodig heeft en hoe u ERPNext wilt inzetten.</p>
+      <div class="grid grid-2">
+        <div>
+          <h4 style="font-size: 15px; margin-bottom: 8px;">Doelstellingen bepalen</h4>
+          <ul style="font-size: 14px; color: var(--text-light); margin-left: 20px;">
+            <li>Welke bedrijfsprocessen wilt u beheren?</li>
+            <li>Welke systemen vervangt ERPNext?</li>
+            <li>Hoeveel gebruikers?</li>
+            <li>Meerdere bedrijfsentiteiten?</li>
+            <li>Welke integraties? (bank, webshop)</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 15px; margin-bottom: 8px;">Hosting kiezen</h4>
+          <ul style="font-size: 14px; color: var(--text-light); margin-left: 20px;">
+            <li><strong>Frappe Cloud</strong> — Officieel platform, snel starten</li>
+            <li><strong>OpenCompany246</strong> — Europese hosting</li>
+            <li><strong>Zelf hosten</strong> — VPS of eigen server</li>
+            <li><strong>Docker</strong> — Voor testomgevingen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <h3><span class="phase-badge">2</span> Inrichting</h3>
+      <p style="color: var(--text-light); margin-bottom: 16px;">ERPNext configureren voor uw specifieke bedrijfssituatie.</p>
+      <div class="grid grid-3">
+        <a href="#handleidingen" class="card card-link" style="padding: 16px;">
+          <h4 style="font-size: 14px; margin-bottom: 4px;">Bedrijfsinrichting</h4>
+          <p style="font-size: 12px;">KvK, BTW-nr, standaardwaarden</p>
+        </a>
+        <a href="#handleidingen" class="card card-link" style="padding: 16px;">
+          <h4 style="font-size: 14px; margin-bottom: 4px;">BTW-configuratie</h4>
+          <p style="font-size: 12px;">Tarieven, templates, categories</p>
+        </a>
+        <a href="#handleidingen" class="card card-link" style="padding: 16px;">
+          <h4 style="font-size: 14px; margin-bottom: 4px;">Grootboekschema</h4>
+          <p style="font-size: 12px;">NL-rekeningen, RGS</p>
+        </a>
+        <a href="#handleidingen" class="card card-link" style="padding: 16px;">
+          <h4 style="font-size: 14px; margin-bottom: 4px;">Bankkoppelingen</h4>
+          <p style="font-size: 12px;">IBAN, SEPA, reconciliatie</p>
+        </a>
+        <a href="#handleidingen" class="card card-link" style="padding: 16px;">
+          <h4 style="font-size: 14px; margin-bottom: 4px;">Users &amp; Rollen</h4>
+          <p style="font-size: 12px;">Accounts, permissies</p>
+        </a>
+        <a href="#handleidingen" class="card card-link" style="padding: 16px;">
+          <h4 style="font-size: 14px; margin-bottom: 4px;">Templates</h4>
+          <p style="font-size: 12px;">Facturen, e-mail, urenstaten</p>
+        </a>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <h3><span class="phase-badge">3</span> Datamigratie</h3>
+      <p style="color: var(--text-light); margin-bottom: 16px;">Bestaande data overzetten naar ERPNext.</p>
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Methode</th><th>Toelichting</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Klanten &amp; Leveranciers</td><td>CSV Import</td><td>Via Data Import Tool</td></tr>
+          <tr><td>Artikelen</td><td>CSV Import</td><td>Met varianten en prijzen</td></tr>
+          <tr><td>Openingsbalans</td><td>Journal Entry</td><td>Per overgangsdatum</td></tr>
+          <tr><td>Openstaande facturen</td><td>Opening Invoices</td><td>Met "Is Opening Entry"</td></tr>
+          <tr><td>Voorraad</td><td>Stock Reconciliation</td><td>Per magazijn</td></tr>
+          <tr><td>Medewerkers</td><td>CSV Import</td><td>Via HR-module</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="phase-card">
+      <h3><span class="phase-badge">4</span> Testen</h3>
+      <p style="color: var(--text-light); margin-bottom: 16px;">Controleren of alles correct werkt.</p>
+      <div class="grid grid-2">
+        <div>
+          <h4 style="font-size: 15px; margin-bottom: 8px;">Functionele tests</h4>
+          <ul style="font-size: 14px; color: var(--text-light); margin-left: 20px;">
+            <li>Verkooporder &rarr; Factuur &rarr; Betaling</li>
+            <li>Inkooporder &rarr; Ontvangst &rarr; Factuur</li>
+            <li>BTW-berekening op facturen</li>
+            <li>SEPA XML-export genereren</li>
+            <li>Bankreconciliatie</li>
+            <li>Print Formats controleren</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 15px; margin-bottom: 8px;">Gebruikerstraining</h4>
+          <ul style="font-size: 14px; color: var(--text-light); margin-left: 20px;">
+            <li>Boekhouder: facturen, betalingen, rapportages</li>
+            <li>Inkoper: inkooporders, leveranciers</li>
+            <li>Verkoper: offertes, CRM</li>
+            <li>Manager: dashboards, goedkeuringen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-card">
+      <h3><span class="phase-badge">5</span> Live gang</h3>
+      <p style="color: var(--text-light); margin-bottom: 16px;">De overstap naar productie.</p>
+      <div class="grid grid-2">
+        <div>
+          <h4 style="font-size: 15px; margin-bottom: 8px;">Go-live checklist</h4>
+          <ul style="font-size: 14px; color: var(--text-light); margin-left: 20px;">
+            <li>Stamgegevens gecontroleerd</li>
+            <li>Openingsbalans correct</li>
+            <li>BTW-berekeningen getest</li>
+            <li>SEPA-export werkt met uw bank</li>
+            <li>Gebruikers getraind</li>
+            <li>Backups geconfigureerd</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size: 15px; margin-bottom: 8px;">Nazorg</h4>
+          <ul style="font-size: 14px; color: var(--text-light); margin-left: 20px;">
+            <li>Dagelijkse controle eerste weken</li>
+            <li>Snelle respons op vragen</li>
+            <li>Wekelijkse evaluatie met key users</li>
+            <li>Aanpassingen waar nodig</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>Implementeren met AI-ondersteuning</h2>
+    <p class="section-lead">ERPNext kan worden ingericht en bediend met behulp van AI-assistenten zoals Claude.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Tijdens de implementatie</h3>
+        <ul style="font-size: 14px; color: var(--text-light); margin-left: 20px; margin-top: 8px;">
+          <li>Configuratie-advies op maat</li>
+          <li>CSV-bestanden voorbereiden voor datamigratie</li>
+          <li>Custom scripts laten schrijven</li>
+          <li>Factuursjablonen ontwerpen</li>
+          <li>Foutmeldingen analyseren en oplossen</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>In het dagelijks gebruik</h3>
+        <ul style="font-size: 14px; color: var(--text-light); margin-left: 20px; margin-top: 8px;">
+          <li>Factuur-PDFs automatisch verwerken</li>
+          <li>Rapportages draaien via de API</li>
+          <li>Configuratie-aanpassingen doorvoeren</li>
+          <li>Troubleshooting bij problemen</li>
+          <li>Nieuwe workflows opzetten</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Hulp nodig?</h2>
+    <p class="section-lead">U kunt zelf aan de slag met onze handleidingen, of een partner inschakelen.</p>
+    <div class="grid grid-3">
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 32px; margin-bottom: 12px;">&#128218;</div>
+        <h3>Zelf doen</h3>
+        <p>Gebruik de handleidingen op deze site</p>
+        <a href="#handleidingen" class="btn btn-sm btn-primary" style="margin-top: 16px; background: var(--primary); color: #fff;">Handleidingen</a>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 32px; margin-bottom: 12px;">&#129309;</div>
+        <h3>Met begeleiding</h3>
+        <p>Schakel een implementatiepartner in</p>
+        <a href="#partners" class="btn btn-sm btn-primary" style="margin-top: 16px; background: var(--primary); color: #fff;">Partners</a>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 32px; margin-bottom: 12px;">&#128172;</div>
+        <h3>Vraag de community</h3>
+        <p>Stel uw vraag op het forum</p>
+        <a href="#forum" class="btn btn-sm btn-primary" style="margin-top: 16px; background: var(--primary); color: #fff;">Forum</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #implementatie -->
+
+
+<!-- ============================================================ -->
+<!-- KLANTEN (klanten.html) -->
+<!-- ============================================================ -->
+<div id="klanten" class="section-divider">
+
+<section class="hero">
+  <div class="container">
+    <h1>ERPNext in Nederland</h1>
+    <p>Ontdek welke Nederlandse organisaties ERPNext gebruiken en hoe zij het systeem inzetten voor hun bedrijfsprocessen.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Uitgelichte gebruikers</h2>
+    <p class="section-lead">Nederlandse organisaties die ERPNext actief inzetten.</p>
+
+    <div class="partner">
+      <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h3>3BM Bouwtechniek</h3>
+          <div class="partner-type">Bouw &amp; Software — Zwijndrecht</div>
+        </div>
+        <div>
+          <span class="badge badge-accent">Oprichter gebruikersgroep</span>
+          <span class="badge badge-primary">Sinds 2023</span>
+        </div>
+      </div>
+      <p>Ingenieursbureau 3BM (onderdeel van 3BM Bouwtechniek) is de oprichter van de ERPNext Gebruikersgroep Nederland. 3BM gebruikt ERPNext sinds 2023 als volledig ERP-systeem en sinds 2025 ook voor de financi&euml;le administratie.</p>
+    </div>
+
+    <div class="partner">
+      <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 12px;">
+        <div>
+          <h3>Braedius Medical</h3>
+          <div class="partner-type">Medische apparatuur — Huizen</div>
+        </div>
+        <span class="badge badge-primary">Sinds 2019</span>
+      </div>
+      <p>Braedius Medical ontwikkelt en produceert medische apparatuur en gebruikt ERPNext voor het volledige bedrijfsproces — van productiebeheer en kwaliteitscontrole tot voorraad en financi&euml;le administratie.</p>
+    </div>
+
+    <div class="grid grid-2" style="margin-top: 24px;">
+      <div class="card">
+        <h3>Domera</h3>
+        <p style="color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 8px;">Vastgoed</p>
+        <p>Vastgoedbeheer en -administratie met ERPNext als centraal systeem.</p>
+      </div>
+      <div class="card">
+        <h3>Kort Geytenbeek</h3>
+        <p style="color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 8px;">Bedrijfsdienstverlening</p>
+        <p>Zet ERPNext in voor bedrijfsprocessen en administratie.</p>
+      </div>
+      <div class="card">
+        <h3>Add Vision</h3>
+        <p style="color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 8px;">ICT</p>
+        <p>ICT-dienstverlener die ERPNext gebruikt voor interne bedrijfsvoering en klantprojecten.</p>
+      </div>
+      <div class="card">
+        <h3>Impertio</h3>
+        <p style="color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 8px;">Software</p>
+        <p>Softwarebedrijf gespecialiseerd in Frappe/ERPNext-ontwikkeling.</p>
+      </div>
+      <div class="card">
+        <h3>OpenAEC Foundation</h3>
+        <p style="color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 8px;">Non-profit</p>
+        <p>Stichting gericht op open standaarden in de bouwsector.</p>
+      </div>
+      <div class="card">
+        <h3>PRILK</h3>
+        <p style="color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 8px;">ERPNext-dienstverlening</p>
+        <p>Gespecialiseerd in ERPNext-implementaties voor Nederlandse bedrijven.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>Pioniers</h2>
+    <p class="section-lead">De eerste Nederlandse ERPNext-gebruikers effenden het pad.</p>
+    <div class="card" style="max-width: 700px;">
+      <h3>Becht Robert</h3>
+      <p style="color: var(--accent); font-weight: 600; font-size: 13px; margin-bottom: 8px;">Pionier sinds 2012</p>
+      <p>Becht Robert is de langst bekende Nederlandse ERPNext-gebruiker, actief sinds 2012 — het jaar waarin ERPNext als open-source project werd gelanceerd.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Een kleine maar groeiende gemeenschap</h2>
+    <p class="section-lead">De Nederlandse ERPNext-community is nog compact, maar groeit gestaag.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Duitsland als voorbeeld</h3>
+        <p>In de DACH-regio (Duitsland, Oostenrijk, Zwitserland) is ERPNext al aanzienlijk verder ontwikkeld. Met een actieve gebruikersgroep, regelmatige meetups en meerdere implementatiepartners.</p>
+      </div>
+      <div class="card">
+        <h3>Praktische toepassingen</h3>
+        <p>Nederlandse bedrijven zetten ERPNext op diverse manieren in:</p>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li><strong>Werkbonnen-app</strong> — digitale werkbonnen voor de bouw en techniek</li>
+          <li><strong>CMS</strong> — website en klantportaal gebouwd op Frappe</li>
+          <li><strong>Database-backend</strong> — Frappe als backend voor custom applicaties</li>
+          <li><strong>Volledige ERP</strong> — boekhouding, CRM, projecten, voorraad</li>
+          <li><strong>Financi&euml;le administratie</strong> — als vervanging van traditionele boekhoudpakketten</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #klanten -->
+
+
+<!-- ============================================================ -->
+<!-- PARTNERS (partners.html) -->
+<!-- ============================================================ -->
+<div id="partners" class="section-divider">
+
+<section class="hero">
+  <div class="container">
+    <h1>Partners</h1>
+    <p>Ondersteuning nodig bij de implementatie van ERPNext? Onze partners helpen u op weg — van hosting tot maatwerk.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>ERPNext-partners in en voor Nederland</h2>
+    <p class="section-lead">Deze organisaties bieden diensten aan rondom ERPNext die relevant zijn voor Nederlandse bedrijven.</p>
+
+    <div class="partner">
+      <img src="img/logo-opencompany246.svg" alt="OpenCompany246" style="height: 48px; margin-bottom: 16px;">
+      <h3>OpenCompany246</h3>
+      <div class="partner-type">Hosting</div>
+      <p>Beheerde ERPNext-hosting op Europese servers. OpenCompany246 biedt een volledig beheerde omgeving waarin ERPNext draait op servers binnen Europa. Inclusief back-ups, updates en monitoring.</p>
+      <div style="margin-top: 16px;">
+        <span class="badge badge-success">Europese servers</span>
+        <span class="badge badge-primary">AVG-compliant</span>
+        <span class="badge badge-accent">Beheerde hosting</span>
+      </div>
+    </div>
+
+    <div class="partner">
+      <img src="img/logo-prilk.svg" alt="PRILK" style="height: 48px; margin-bottom: 16px;">
+      <h3>PRILK</h3>
+      <div class="partner-type">Implementatie &amp; Nederlandse administratie</div>
+      <p>PRILK is gespecialiseerd in ERPNext-implementaties voor het Nederlandse MKB. Met kennis van de Nederlandse boekhoudkundige vereisten, BTW-inrichting en SEPA-betalingen.</p>
+      <div style="margin-top: 16px;">
+        <span class="badge badge-success">Nederlandse markt</span>
+        <span class="badge badge-primary">BTW &amp; SEPA</span>
+        <span class="badge badge-accent">Implementatie</span>
+      </div>
+    </div>
+
+    <div class="partner">
+      <img src="img/logo-impertio.svg" alt="Impertio Studio" style="height: 48px; margin-bottom: 16px;">
+      <h3>Impertio Studio</h3>
+      <div class="partner-type">Custom development &amp; integraties</div>
+      <p>Impertio Studio ontwikkelt maatwerkoplossingen op basis van het Frappe Framework en ERPNext. Van custom apps en integraties met externe systemen tot volledige bedrijfsapplicaties.</p>
+      <div style="margin-top: 16px;">
+        <span class="badge badge-success">Frappe Framework</span>
+        <span class="badge badge-primary">Custom apps</span>
+        <span class="badge badge-accent">Integraties</span>
+      </div>
+    </div>
+
+    <div class="partner">
+      <img src="img/logo-frappe.svg" alt="Frappe Cloud" style="height: 48px; margin-bottom: 16px;">
+      <h3>Frappe Cloud</h3>
+      <div class="partner-type">Officieel hostingplatform</div>
+      <p>Frappe Cloud is het offici&euml;le hostingplatform van Frappe Technologies, de ontwikkelaar van ERPNext. Volledig beheerde cloudoplossing met automatische updates, back-ups en schaling.</p>
+      <div style="margin-top: 16px;">
+        <span class="badge badge-success">Officieel platform</span>
+        <span class="badge badge-primary">Volledig beheerd</span>
+        <span class="badge badge-accent">Snel starten</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>Self-hosting</h2>
+    <p class="section-lead">ERPNext is volledig open source. U kunt het systeem ook zelf hosten op uw eigen server of bij een hostingprovider naar keuze.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Eigen server</h3>
+        <p>Installeer ERPNext op een eigen (virtuele) server. Volledige controle over data, configuratie en updates.</p>
+      </div>
+      <div class="card">
+        <h3>VPS bij een provider</h3>
+        <p>Draai ERPNext op een VPS bij een provider zoals Hetzner, DigitalOcean of TransIP.</p>
+      </div>
+      <div class="card">
+        <h3>Docker</h3>
+        <p>ERPNext is beschikbaar als Docker-container. Handig voor testomgevingen en ontwikkeling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Word partner</h2>
+    <p class="section-lead">Biedt u diensten aan rondom ERPNext of het Frappe Framework? Word onderdeel van het Nederlandse partnernetwerk.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Waarom partner worden?</h3>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Zichtbaarheid bij Nederlandse ERPNext-gebruikers</li>
+          <li>Vermelding op deze website</li>
+          <li>Toegang tot het partnernetwerk</li>
+          <li>Samenwerking met andere partners</li>
+          <li>Deelname aan evenementen en meetups</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Welke partners zoeken wij?</h3>
+        <ul style="margin-top: 12px; margin-left: 20px; font-size: 14px; color: var(--text-light);">
+          <li>Implementatiepartners met ERPNext-ervaring</li>
+          <li>Hostingproviders met ERPNext-aanbod</li>
+          <li>Ontwikkelaars van Frappe-apps</li>
+          <li>Consultants en boekhouders met ERPNext-kennis</li>
+          <li>Trainers en opleiders</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 32px;">
+      <a href="#forum" class="btn btn-primary">Neem contact op via het forum</a>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #partners -->
+
+
+<!-- ============================================================ -->
+<!-- OVER ONS (over-ons.html) -->
+<!-- ============================================================ -->
+<div id="over-ons" class="section-divider">
+
+<section class="hero">
+  <div class="container">
+    <h1>Over de ERPNext Gebruikersgroep Nederland</h1>
+    <p>De Nederlandstalige bron voor ERPNext. Opgericht begin 2026 om ERPNext toegankelijk te maken voor Nederlandse bedrijven.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Wie zijn wij</h2>
+    <p class="section-lead">De ERPNext Gebruikersgroep Nederland is een onafhankelijk initiatief van en voor Nederlandse ERPNext-gebruikers.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Opgericht begin 2026</h3>
+        <p>De ERPNext Gebruikersgroep Nederland is begin 2026 opgericht door Ingenieursbureau 3BM uit Zwijndrecht. Na jarenlang werken met ERPNext en het missen van Nederlandstalige documentatie en een lokale community, besloot 3BM het initiatief te nemen.</p>
+      </div>
+      <div class="card">
+        <h3>Ingenieursbureau 3BM</h3>
+        <p>3BM is een ingenieursbureau in Zwijndrecht dat bouwadvies combineert met softwareontwikkeling. Het bedrijf gebruikt ERPNext sinds 2023 als ERP-systeem en sinds 2025 voor de volledige financi&euml;le administratie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>Onze missie</h2>
+    <p class="section-lead">ERPNext toegankelijk maken voor Nederlandse bedrijven door kennis te delen, documentatie te ontwikkelen en een community op te bouwen.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Het probleem</h3>
+        <p>ERPNext is een uitstekend ERP-systeem, maar voor Nederlandse bedrijven zijn er drempels: documentatie is Engelstalig, de Nederlandse inrichting (BTW, SEPA, KvK) is niet standaard gedocumenteerd, en er is geen lokale community. Dat willen wij veranderen.</p>
+      </div>
+      <div class="card">
+        <h3>Onze aanpak</h3>
+        <p>Wij bouwen aan een complete Nederlandstalige kennisbasis. Praktisch, concreet en gebaseerd op ervaring uit de praktijk. Geen theorie, maar werkende oplossingen die u direct kunt toepassen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Wat wij doen</h2>
+    <p class="section-lead">Concrete activiteiten van de ERPNext Gebruikersgroep Nederland.</p>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="card-icon">&#128214;</div>
+        <h3>Handleidingen</h3>
+        <p>Stapsgewijze handleidingen voor het inrichten van ERPNext volgens Nederlandse normen. Praktisch en direct toepasbaar.</p>
+        <div style="margin-top: 12px;">
+          <a href="#handleidingen" class="btn btn-sm btn-primary">Bekijk handleidingen</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128172;</div>
+        <h3>Forum</h3>
+        <p>Een Nederlandstalig forum voor vragen, discussies en kennisdeling. De centrale plek voor de Nederlandse ERPNext-community.</p>
+        <div style="margin-top: 12px;">
+          <a href="#forum" class="btn btn-sm btn-primary">Naar het forum</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128197;</div>
+        <h3>Evenementen</h3>
+        <p>Meetups, gebruikersdagen en workshops. Ontmoet andere Nederlandse ERPNext-gebruikers.</p>
+        <div style="margin-top: 12px;">
+          <a href="#agenda" class="btn btn-sm btn-primary">Bekijk agenda</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#129309;</div>
+        <h3>Partnernetwerk</h3>
+        <p>Een overzicht van partners die diensten aanbieden rondom ERPNext in Nederland.</p>
+        <div style="margin-top: 12px;">
+          <a href="#partners" class="btn btn-sm btn-primary">Bekijk partners</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>Inspiratie: ERPNext DACH</h2>
+    <p class="section-lead">De ERPNext Gebruikersgroep Nederland is mede ge&iuml;nspireerd door het succes van de Duitstalige gebruikersgroep.</p>
+    <div class="card" style="max-width: 800px;">
+      <h3><a href="https://discuss.erpnext.com/c/erpnext-dach">ERPNext DACH (Duitsland, Oostenrijk, Zwitserland)</a></h3>
+      <p>De DACH-gebruikersgroep is een van de meest actieve ERPNext-gemeenschappen in Europa. Met regelmatige meetups, een levendig forum, gezamenlijke ontwikkelprojecten en meerdere lokale implementatiepartners.</p>
+      <p style="margin-top: 12px;">De Nederlandse gebruikersgroep streeft ernaar een vergelijkbare community op te bouwen, aangepast aan de specifiek Nederlandse context.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Bijdragen</h2>
+    <p class="section-lead">De ERPNext Gebruikersgroep Nederland is een gemeenschapsproject. Elke bijdrage is welkom.</p>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Deel uw kennis</h3>
+        <p>Schrijf mee aan handleidingen, beantwoord vragen op het forum of presenteer op een meetup.</p>
+      </div>
+      <div class="card">
+        <h3>Meld problemen</h3>
+        <p>Kom u een fout tegen in de documentatie of heeft u suggesties? Laat het ons weten via het forum.</p>
+      </div>
+      <div class="card">
+        <h3>Word partner</h3>
+        <p>Biedt u ERPNext-diensten aan? Word onderdeel van het partnernetwerk.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 32px;">
+      <a href="#forum" class="btn btn-primary">Neem contact op</a>
+    </div>
+  </div>
+</section>
+
+</div><!-- end #over-ons -->
+
+
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>ERPNext Gebruikersgroep Nederland</h4>
+        <p style="font-size: 14px; margin-bottom: 16px;">De Nederlandstalige bron voor ERPNext. Opgericht begin 2026 door Ingenieursbureau 3BM.</p>
+        <p style="font-size: 13px;">Een initiatief van de ERPNext Gebruikersgroep Nederland.</p>
+      </div>
+      <div>
+        <h4>Website</h4>
+        <ul>
+          <li><a href="#waarom">Waarom ERPNext</a></li>
+          <li><a href="#modules">Modules</a></li>
+          <li><a href="#nederland">Nederland</a></li>
+          <li><a href="#handleidingen">Handleidingen</a></li>
+          <li><a href="#klanten">Klanten</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#forum">Forum</a></li>
+          <li><a href="#agenda">Agenda</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#over-ons">Over ons</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Extern</h4>
+        <ul>
+          <li><a href="https://erpnext.com">erpnext.com</a></li>
+          <li><a href="https://frappecloud.com">frappecloud.com</a></li>
+          <li><a href="https://discuss.frappe.io">discuss.frappe.io</a></li>
+          <li><a href="https://github.com/frappe/erpnext">github.com/frappe/erpnext</a></li>
+          <li><a href="https://discuss.erpnext.com/c/erpnext-dach">ERPNext DACH (Duitsland)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ERPNext Gebruikersgroep Nederland</span>
+      <span>Gebouwd met ERPNext / Frappe Framework</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

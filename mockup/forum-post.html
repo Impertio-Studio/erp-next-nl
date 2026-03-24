@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTW-verleggingsregeling voor onderaannemers — Forum — ERPNext Gebruikersgroep Nederland</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .post-box { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; }
+    .post-box.is-solution { border-color: var(--success); border-width: 2px; }
+    .post-author { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .post-author-name { font-weight: 600; font-size: 15px; }
+    .post-author-meta { font-size: 12px; color: var(--text-muted); }
+    .post-body { font-size: 15px; line-height: 1.7; }
+    .post-body p { margin-bottom: 12px; }
+    .post-body code { background: var(--bg-light); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+    .post-body pre { background: var(--bg-light); padding: 16px; border-radius: var(--radius); font-size: 13px; overflow-x: auto; margin: 12px 0; }
+    .post-actions { display: flex; gap: 16px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 13px; }
+    .post-actions a { color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+    .post-actions a:hover { color: var(--primary); }
+    .solution-badge { display: inline-flex; align-items: center; gap: 4px; background: rgba(0,168,107,0.1); color: var(--success); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .reply-box { background: var(--bg-light); border-radius: var(--radius); padding: 24px; margin-top: 24px; }
+    .reply-box textarea { width: 100%; border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; font-family: var(--font); font-size: 14px; min-height: 120px; resize: vertical; }
+    .reply-box textarea:focus { outline: none; border-color: var(--primary); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="index.html" class="logo"><span class="logo-icon">NL</span> ERPNext Gebruikersgroep Nederland</a>
+    <button class="nav-toggle">&#9776;</button>
+    <nav>
+      <a href="waarom.html">Waarom ERPNext</a>
+      <a href="modules.html">Modules</a>
+      <a href="nederland.html">Nederland</a>
+      <a href="handleidingen.html">Handleidingen</a>
+      <a href="forum.html" class="active">Forum</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="blog.html">Blog</a>
+      <a href="partners.html">Partners</a>
+      <a href="over-ons.html">Over ons</a>
+    </nav>
+  </div>
+</header>
+
+<section style="padding: 24px 0 0;">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="forum.html">Forum</a> &rsaquo;
+      <a href="#">Boekhouding &amp; Financieel</a> &rsaquo;
+      BTW-verleggingsregeling
+    </div>
+  </div>
+</section>
+
+<section style="padding-top: 16px;">
+  <div class="container">
+    <div class="page-with-sidebar">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h4>Topic Info</h4>
+          <div style="padding: 0 16px; font-size: 13px; color: var(--text-light);">
+            <p><strong>Categorie:</strong> Boekhouding &amp; Financieel</p>
+            <p><strong>Aangemaakt:</strong> 24 mrt 2026</p>
+            <p><strong>Reacties:</strong> 4</p>
+            <p><strong>Views:</strong> 28</p>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <h4>Gerelateerde handleidingen</h4>
+          <div class="sidebar-nav">
+            <a href="handleidingen.html">BTW-inrichting voor Nederland</a>
+            <a href="handleidingen.html">Bedrijfsinrichting</a>
+          </div>
+        </div>
+        <div class="sidebar-section">
+          <h4>Tags</h4>
+          <div style="padding: 0 16px; display: flex; gap: 6px; flex-wrap: wrap;">
+            <span class="badge badge-primary">BTW</span>
+            <span class="badge badge-primary">verlegd</span>
+            <span class="badge badge-primary">bouw</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <div>
+        <h1 style="font-size: 24px; margin-bottom: 24px;">Hoe stel ik de BTW-verleggingsregeling in voor onderaannemers?</h1>
+
+        <!-- ORIGINAL POST -->
+        <div class="post-box">
+          <div class="post-author">
+            <div class="forum-avatar">M</div>
+            <div>
+              <div class="post-author-name">Maarten</div>
+              <div class="post-author-meta">2 uur geleden &middot; Bewerkt</div>
+            </div>
+          </div>
+          <div class="post-body">
+            <p>Hallo allemaal,</p>
+            <p>Ik ben bezig met het inrichten van de boekhouding voor ons bouwbedrijf. We werken met onderaannemers die facturen sturen met "BTW verlegd". Hoe stel ik dit correct in in ERPNext?</p>
+            <p>Ik heb al een Purchase Tax Template aangemaakt met 21% shifted, maar ik weet niet zeker of de boeking dan correct loopt. De BTW moet namelijk zowel als schuld als als voorbelasting worden geboekt.</p>
+            <p>Huidige setup:</p>
+            <ul>
+              <li>ERPNext v15</li>
+              <li>Company: Nederlands bedrijf (bouw)</li>
+              <li>Standaard grootboekschema</li>
+            </ul>
+            <p>Heeft iemand hier ervaring mee?</p>
+          </div>
+          <div class="post-actions">
+            <a href="#">&#9650; 3</a>
+            <a href="#">Reageren</a>
+            <a href="#">Delen</a>
+          </div>
+        </div>
+
+        <!-- REPLY 1 -->
+        <div class="post-box">
+          <div class="post-author">
+            <div class="forum-avatar" style="background: #6c5ce7;">P</div>
+            <div>
+              <div class="post-author-name">Pieter</div>
+              <div class="post-author-meta">1 uur geleden</div>
+            </div>
+          </div>
+          <div class="post-body">
+            <p>Hi Maarten, je hebt twee opties:</p>
+            <p><strong>Optie 1: Shifted template</strong> — Maak een Purchase Tax Template "Netherlands VAT shifted 21%". Hierbij wordt de BTW niet betaald aan de leverancier maar verlegd naar je eigen aangifte.</p>
+            <p><strong>Optie 2: Reverse Charge</strong> — Gebruik "NL Reverse Charge 21% VAT". Hierbij wordt 21% BTW tegelijk als schuld &eacute;n als voorbelasting geboekt. Per saldo geen effect op de kas, maar het staat correct op je BTW-aangifte (rubriek 2a).</p>
+            <p>Voor onderaannemers in de bouw is optie 1 het meest gebruikelijk. De verleggingsregeling in de bouw valt onder rubriek 2a van de BTW-aangifte.</p>
+          </div>
+          <div class="post-actions">
+            <a href="#">&#9650; 5</a>
+            <a href="#">Reageren</a>
+            <a href="#">Delen</a>
+          </div>
+        </div>
+
+        <!-- REPLY 2 - SOLUTION -->
+        <div class="post-box is-solution">
+          <div class="post-author">
+            <div class="forum-avatar" style="background: #00a86b;">R</div>
+            <div>
+              <div class="post-author-name">Robert</div>
+              <div class="post-author-meta">45 minuten geleden &middot; <span class="solution-badge">&#10003; Oplossing</span></div>
+            </div>
+          </div>
+          <div class="post-body">
+            <p>Om het concreet te maken, hier de stappen:</p>
+            <p><strong>1. Maak een Purchase Tax Template aan:</strong></p>
+            <pre>Naam: Netherlands VAT shifted 21%
+Company: [uw bedrijf]
+Tax Category: (leeg of apart aanmaken)
+
+Row 1:
+  Charge Type: On Net Total
+  Account Head: VAT 21% Shifted - [AFK]
+  Rate: 21
+  Description: BTW 21% verlegd</pre>
+            <p><strong>2. Bij de Supplier:</strong></p>
+            <ul>
+              <li>Stel geen speciale Tax Category in, of maak een aparte "BTW Verlegd" category</li>
+              <li>Selecteer bij het aanmaken van de Purchase Invoice handmatig het shifted template</li>
+            </ul>
+            <p><strong>3. Controleer de boeking:</strong></p>
+            <p>Na submit van de Purchase Invoice moet je in het General Ledger zien:</p>
+            <ul>
+              <li>Debit: Kostenrekening (netto bedrag)</li>
+              <li>Credit: Crediteuren (netto bedrag, NIET incl. BTW)</li>
+              <li>De 21% BTW wordt NIET geboekt — dat is correct bij verlegd</li>
+            </ul>
+            <p>In je BTW-aangifte neem je het nettobedrag op in rubriek 2a en de berekende BTW in rubriek 5b (als voorbelasting).</p>
+            <p>Het handleiding <a href="handleidingen.html">BTW-inrichting voor Nederland</a> op deze site beschrijft dit ook in detail.</p>
+          </div>
+          <div class="post-actions">
+            <a href="#" style="color: var(--success);">&#9650; 8</a>
+            <a href="#">Reageren</a>
+            <a href="#">Delen</a>
+          </div>
+        </div>
+
+        <!-- REPLY 3 -->
+        <div class="post-box">
+          <div class="post-author">
+            <div class="forum-avatar">M</div>
+            <div>
+              <div class="post-author-name">Maarten</div>
+              <div class="post-author-meta">30 minuten geleden</div>
+            </div>
+          </div>
+          <div class="post-body">
+            <p>Bedankt Robert, dit is precies wat ik nodig had! Ik heb het ingesteld en de testboeking klopt. Heb het als oplossing gemarkeerd.</p>
+            <p>Nog een vraag: moet ik voor elke onderaannemer apart een Tax Category aanmaken, of kan ik het template ook handmatig selecteren per factuur?</p>
+          </div>
+          <div class="post-actions">
+            <a href="#">&#9650; 1</a>
+            <a href="#">Reageren</a>
+            <a href="#">Delen</a>
+          </div>
+        </div>
+
+        <!-- REPLY 4 -->
+        <div class="post-box">
+          <div class="post-author">
+            <div class="forum-avatar" style="background: #00a86b;">R</div>
+            <div>
+              <div class="post-author-name">Robert</div>
+              <div class="post-author-meta">15 minuten geleden</div>
+            </div>
+          </div>
+          <div class="post-body">
+            <p>Je kunt beide. Als de meeste facturen van een leverancier verlegd zijn, stel dan een Tax Category in bij die Supplier — dan wordt het template automatisch geselecteerd.</p>
+            <p>Als het per factuur wisselt, selecteer dan handmatig bij de Purchase Invoice. Beide manieren zijn correct.</p>
+          </div>
+          <div class="post-actions">
+            <a href="#">&#9650; 2</a>
+            <a href="#">Reageren</a>
+            <a href="#">Delen</a>
+          </div>
+        </div>
+
+        <!-- REPLY BOX -->
+        <div class="reply-box">
+          <h3 style="font-size: 16px; margin-bottom: 12px;">Reageren</h3>
+          <textarea placeholder="Schrijf uw reactie... (Markdown wordt ondersteund)"></textarea>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+            <span style="font-size: 12px; color: var(--text-muted);">Markdown en codeblokken worden ondersteund</span>
+            <a href="#" class="btn btn-primary btn-sm">Plaatsen</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>&copy; 2026 ERPNext Gebruikersgroep Nederland</span>
+      <span>Gebouwd met ERPNext / Frappe Framework</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
